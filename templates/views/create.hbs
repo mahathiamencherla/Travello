@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Travello</title>
+        <!-- <link rel="icon" href="images/note.png"> 
+        <link rel="stylesheet" href="/css/styles.css"> -->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+
+       
+
+
+        <div id="cent">
+
+            <form>
+                <label >Destination:</label>
+                <input placeholder="Place of travel" type="text" id="dest"><br><br>
+                <label >Number of people:</label>
+                <input placeholder="Group number" type="text" id="peopleCount"><br><br>                        
+                <label >Planner password:</label>
+                <input placeholder="Enter unique password" type="text" id="pwd"><br><br>
+                <label >Reconfirm Password:</label>
+                <input placeholder="Reconfirm password" type="text" id="re_pwd"><br><br>                
+                <button>Submit</button> 
+            </form>    
+            <div >
+                <p id="errorMessage"></p>            
+            </div>        
+        </div>
+        {{>footer}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src= "/js/create.js" >  </script>
+    </body>
+    
+
+</html> 

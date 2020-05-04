@@ -28,6 +28,15 @@ app.get('/', (req,res)=> {
     })
 })
 
+app.get('/create', (req,res)=> {
+    res.render('create', {
+        title: 'Create Planner',
+        description: 'Create a planner for your group!'
+    })
+})
+
+
+
 app.use(plannerRouter)
 
 
