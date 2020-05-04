@@ -1,14 +1,32 @@
 const express = require('express')
+const path = require('path')
+const hbs = require('hbs')
 require('./db/mongoose')
 const plannerRouter = require('./routers/planner')
 
-//const Planner = require('./models/planner')
-
+const pubdir = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname,'../templates/views')
+const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
+
+
+app.set('view engine','hbs')
+app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
+
+app.use(express.static(pubdir))
+
 const port = process.env.PORT || 3001
 
 app.use(express.json())
+
+app.get('/', (req,res)=> {
+    res.render('index', {
+        title: 'Travello',
+        description: 'Select a planner for your group!'
+    })
+})
 
 app.use(plannerRouter)
 
