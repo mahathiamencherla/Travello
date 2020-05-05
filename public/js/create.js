@@ -6,7 +6,7 @@ const peopleCount = document.querySelector("#peopleCount")
 const pwd = document.querySelector("#pwd")
 const re_pwd = document.querySelector("#re_pwd")
 const msg  = document.querySelector("#errorMessage")
-
+const submit = document.querySelector("#submit")
 
 const illegalPassword = (error) => {
     destination.value = destination.value
@@ -22,17 +22,23 @@ createForm.addEventListener("submit", (e) => {
     if (pwd.value != re_pwd.value){
         illegalPassword("Passwords dont match")         
     }else{
-        axios({
-            method: 'post',
-            url: '/create',
-            data: {
-              destination: destination.value,
-              peopleCount: peopleCount.value,
-              password: pwd.value
-            }
-          })
-        console.log("Success")
-        msg.textContent = "Success!"
+        try {
+            axios({
+                method: 'post',
+                url: '/create',
+                data: {
+                  destination: destination.value,
+                  peopleCount: peopleCount.value,
+                  password: pwd.value
+                }
+              })
+              function Redirect() {window.location= '/me'}
+        } catch (error) {
+              
+        //console.log("Success")
+        msg.textContent = "Unable to create!"
+        }
+      
     }
         
 })

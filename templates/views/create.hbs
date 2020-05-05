@@ -3,19 +3,16 @@
 <html>
     <head>
         <title>Travello</title>
-        <!-- <link rel="icon" href="images/note.png"> 
-        <link rel="stylesheet" href="/css/styles.css"> -->
+        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="stylesheet" href="/css/create.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
     <body>
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-
-       
-
-
+        <a id = "home" href="/">HOME</a>
         <div id="cent">
-
+            <div  id="insideCent">
             <form>
                 <label >Destination:</label>
                 <input placeholder="Place of travel" type="text" id="dest"><br><br>
@@ -25,15 +22,16 @@
                 <input placeholder="Enter unique password" type="text" id="pwd"><br><br>
                 <label >Reconfirm Password:</label>
                 <input placeholder="Reconfirm password" type="text" id="re_pwd"><br><br>                
-                <button>Submit</button> 
+                <input type="submit" value="Submit!" onclick = "Redirect();">
             </form>    
-            <div >
+            <div id="errormsg">
                 <p id="errorMessage"></p>            
             </div>        
         </div>
-        {{>footer}}
+        </div>
+        {{>footer}} 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
-        <script src= "/js/create.js" >  </script>
+        <script src= "/js/create.js" > </script>
     </body>
     
 
