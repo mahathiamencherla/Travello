@@ -1,6 +1,6 @@
 // import axios from 'axios'
 
-const createForm = document.querySelector('form')
+
 const destination = document.querySelector("#dest")
 const peopleCount = document.querySelector("#peopleCount")
 const pwd = document.querySelector("#pwd")
@@ -17,7 +17,7 @@ const illegalPassword = (error) => {
     console.log(error)
 }
 
-createForm.addEventListener("submit", (e) => {
+document.getElementById("sub_but").addEventListener("click", (e) => { 
     e.preventDefault() 
     if (pwd.value != re_pwd.value){
         illegalPassword("Passwords dont match")         
@@ -32,7 +32,7 @@ createForm.addEventListener("submit", (e) => {
                   password: pwd.value
                 }
               })
-              function Redirect() {window.location= '/me'}
+              
         } catch (error) {
               
         //console.log("Success")

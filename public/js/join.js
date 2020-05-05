@@ -1,9 +1,9 @@
-const createForm = document.querySelector('form')
+
 const destination = document.querySelector("#dest")
 const pwd = document.querySelector("#pwd")
 const msg  = document.querySelector("#errorMessage")
 
-createForm.addEventListener("submit", (e) => {
+document.getElementById("sub_but").addEventListener("click", (e) => { 
     e.preventDefault()         
     
     try {

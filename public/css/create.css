@@ -76,7 +76,7 @@ input[type=text], select {
     font-family: Montserrat;
   }
   
-  input[type=submit] {
+  button {
     width: 100%;
     background-color: #E33363;
     color: white;
@@ -88,7 +88,7 @@ input[type=text], select {
     font-family: Montserrat;
   }
 
-   input[type=submit]:hover {
+   button:hover {
     background-color: #c92a52;
   }
 
