@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 
-<html>
+<html>    
     <head>
-        <title>Notes</title>
-        <!-- <link rel="icon" href="images/note.png"> 
-        <link rel="stylesheet" href="/css/styles.css"> -->
+        <title>{{title}}</title>
+        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="stylesheet" href="/css/home_styles.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
     <body>
-        <h1>{{title}}</h1>
-        <p>{{description}}</p>
-        <div id="cent">
-            <div id="one">
-                <a href="/create">CREATE</a>
-            </div>
-            <div id="two">
-                <a href="/join">JOIN</a>
+        <div class="main-content">
+            <h1>{{title}}</h1>            
+            <div class = "buttoncase">
+                <div class="description"><p >{{description}}</p></div>
+                <button onclick="window.location.href = '/create';">CREATE</button>
+                <button onclick="window.location.href = '/join';">JOIN  </button>                
             </div>
         </div>
         {{>footer}}
