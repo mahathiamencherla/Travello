@@ -35,6 +35,12 @@ app.get('/create', (req,res)=> {
     })
 })
 
+app.get('/join', (req,res)=> {
+    res.render('join', {
+        title: 'Join Planner',
+        description: 'Join aa existing planner!'
+    })
+})
 
 
 app.use(plannerRouter)
