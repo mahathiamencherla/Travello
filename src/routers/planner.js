@@ -1,6 +1,6 @@
 const express = require('express')
 const router = new express.Router()
-//const auth = require('../middleware/auth')
+const auth = require('../middleware/auth')
 const Planner = require('../models/planner')
 
 router.get('/test', (req,res) => {
@@ -8,7 +8,6 @@ router.get('/test', (req,res) => {
 })
 
 router.post('/create', async (req,res) => {
-    console.log(req.body)
     const planner = new Planner(req.body)
 
     try {
@@ -29,6 +28,23 @@ router.post('/join', async (req,res) => {
         res.send({ planner, token })
     } catch (e) {
         res.status(400).send(e)       
+    }
+})
+
+router.get('/me', auth, async (req, res) => {
+    res.send(req.planner)
+})
+
+router.post('/logout', auth, async (req, res) => {
+    try {
+        req.planner.tokens = req.planner.tokens.filter((token) => {
+            return token.token !== req.token
+        })
+        
+        await req.planner.save()
+        res.send()
+    } catch (error) {
+        res.status(500).send()
     }
 })
 
