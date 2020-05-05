@@ -1,0 +1,61 @@
+body {
+    color: #333333;     /* set font color */
+    font-family: 'Montserrat';   /* set font type */
+    max-width: 650px;     /* set width of body */
+    margin: 0 auto;       /* margin value for top and bottom ;  margin value for left and right */
+    padding: 0 16px;      /* not apdding on top and down ;  pad left and right */
+    background-image: url("../img/home_bg.jpg") ;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;  /* default is "row" ie left to right */
+    min-height: 100vh       
+}
+
+footer {
+    text-align: center;
+    color: #0a0101;
+    border-top: 1px solid #000000;
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+header {
+    margin-top: 16px;
+    margin-bottom: 48px;    
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.description {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;    
+}
+
+
+.buttoncase {
+    margin: 0 auto;
+    padding: 84px 32px;
+    background-color: transparent;
+    background-clip: content-box;
+    border-radius: 150px;
+    
+}
+
+
+button{
+    width: 200px;
+    height: 200px;   
+    margin: 0 42px; 
+    padding: 32px 16px;    
+    border-radius: 50px;
+    opacity: 0.5;
+    font-weight: bolder;
+    font-size: xx-large;
+    font-family: 'Montserrat'; 
+    background-color: lightgrey;    
+}
