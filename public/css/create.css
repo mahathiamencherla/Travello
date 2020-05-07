@@ -15,8 +15,8 @@ body {
 #cent {
      
     box-sizing: content-box;
-    width: 525px;
-    height: 425px;
+    width: 500px;
+    height: 400px;
     padding: 30px;
     margin: 50px 38px;
     border: 5px solid #a4e1e8;
@@ -35,8 +35,8 @@ body {
   #insideCent {
      
     box-sizing: content-box;
-    width: 475px;
-    height: 375px;
+    width: 450px;
+    height: 350px;
     padding: 30px;  
     border: 5px solid #88d7dd;
     display: grid;
@@ -54,18 +54,19 @@ body {
   footer {
     color: #202024;
     border-top: 1px solid #202024;
-    margin-top: 700px;
+    margin: 700px auto;
     padding: 16px 0;
-    top:100px;
+    
 }
 
 form {
     border-radius: 5px;
     background-color: #88d7dd;
-    width: 475px;
-    height: 375px;
+    width: 450px;
+    height: 350px;
     text-align: center;
     font-family: Montserrat;
+    font-size: 12pt;
   }
 
 input[type=text], select {
