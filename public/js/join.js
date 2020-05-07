@@ -4,24 +4,26 @@ const pwd = document.querySelector("#pwd")
 const msg  = document.querySelector("#errorMessage")
 
 document.getElementById("sub_but").addEventListener("click", (e) => { 
-    e.preventDefault()         
-    
-    try {
-        axios({
-            method: 'post',
-            url: '/join',
-            data: {
-              destination: destination.value,
-              password: pwd.value
-            }
-          })
-        console.log("Success")
-        msg.textContent = "Success!"
-    } catch (error) {
-        console.log("Failed to join")
-        msg.textContent = "Failed to join!"
-    }
-
-        
+    e.preventDefault()      
+    axios({
+      method: 'post',
+      url: '/join',
+      data: {
+        destination: destination.value,
+        password: pwd.value
+      }
+    }).then((result) => {
+      console.log(result.data.token)
+      axios.get("/me", {
+          headers: {
+              'Authorization': `Bearer ${result.data.token}`
+          }                
+      }).catch ((e) => {
+          msg.textContent = "Authorization failed"    //remove this when deploying
+      })
+      window.location.href = '/me'       
+    }).catch((error) => {      
+      msg.textContent = "Failed to join!"
+  })      
 })
 

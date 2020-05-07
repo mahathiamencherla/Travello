@@ -97,6 +97,7 @@ input[type=text], select {
   }
 
   #errormsg {
+      width: fit-content;
       margin-top:375px;
       margin-right:250px;
   }
