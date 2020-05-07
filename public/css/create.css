@@ -3,7 +3,7 @@ body {
     width: 1920px;
     height: 1080px;
     background-color: white;
-    overflow: hidden;
+    overflow: visible;
     font-family: 'Montserrat';
     text-align: center;    
     max-width: 650px;    
@@ -53,7 +53,7 @@ body {
   footer {
     color: #202024;
     border-top: 1px solid #626269;
-    margin: 700px auto;
+    margin: 92px auto ;
     padding: 16px 0;
     
 }
@@ -97,9 +97,9 @@ input[type=text], select {
   }
 
   #errormsg {
-      width: fit-content;
-      margin-top:375px;
-      margin-right:250px;
+    font-weight: bolder;
+    font-family: Montserrat;
+    margin: 570px auto 0px;
   }
 
  #home {
