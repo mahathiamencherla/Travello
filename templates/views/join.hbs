@@ -19,12 +19,12 @@
                 <input placeholder="Place of travel" type="text" id="dest"><br><br>                      
                 <label >Planner password:</label>
                 <input placeholder="Enter unique password" type="text" id="pwd"><br><br>               
-                <button id="sub_but" onclick="window.location.href = '/me';">Submit!</button>
-            </form>    
-            <div >
-                <p id="errorMessage"></p>            
-            </div>        
+                <button id="sub_but">Login!</button>
+            </form>                  
         </div>
+        </div>
+        <div id="errormsg">
+            <p id="errorMessage">&nbsp</p>            
         </div>
         {{>footer}}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>

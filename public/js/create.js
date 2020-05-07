@@ -22,23 +22,26 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
     if (pwd.value != re_pwd.value){
         illegalPassword("Passwords dont match")         
     }else{
-        try {
-            axios({
-                method: 'post',
-                url: '/create',
-                data: {
-                  destination: destination.value,
-                  peopleCount: peopleCount.value,
-                  password: pwd.value
-                }
-              })
-              
-        } catch (error) {
-              
-        //console.log("Success")
-        msg.textContent = "Unable to create!"
-        }
-      
-    }
-        
-})
+        axios({
+            method: 'post',
+            url: '/create',
+            data: {
+                destination: destination.value,
+                peopleCount: peopleCount.value,
+                password: pwd.value
+            }
+            }).then((result) => {
+                console.log(result.data.token)
+                axios.get("/me", {
+                    headers: {
+                        'Authorization': `Bearer ${result.data.token}`
+                    }                
+                }).catch ((e) => {
+                    msg.textContent = "Authorization failed"    //remove this when deploying
+                })
+                window.location.href = '/me'
+            }).catch ((e) => {
+                msg.textContent = "Unable to create!"
+            })              
+        }                  
+    })          
