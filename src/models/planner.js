@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
+const List = require('./list')
 
 const plannerSchema = new mongoose.Schema({
     destination: {
@@ -41,6 +42,12 @@ const plannerSchema = new mongoose.Schema({
     }]
  }, {
      timestamps: true
+})
+
+plannerSchema.virtual('List', {
+    ref: 'List',
+    localField: '_id',
+    foreignField: 'owner'
 })
 
 plannerSchema.methods.generateAuthToken = async function () {

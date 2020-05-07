@@ -14,6 +14,11 @@ const listSchema = new mongoose.Schema({
     cost: {
         type: Number,
         default: 0
+    },
+    owner: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Planner'
     }
 }, {
     timestamps: true    

@@ -3,6 +3,8 @@ const path = require('path')
 const hbs = require('hbs')
 require('./db/mongoose')
 const plannerRouter = require('./routers/planner')
+const listRouter = require('./routers/list')
+
 
 const pubdir = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname,'../templates/views')
@@ -50,7 +52,7 @@ app.get('/me', (req,res)=> {
 })
 
 app.use(plannerRouter)
-
+app.use(listRouter)
 
 app.listen(port, () => {
     console.log("Server is on port: " + port)
