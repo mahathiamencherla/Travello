@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>    
+    <head>
+        <title>{{title}}</title>
+        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="stylesheet" href="/css/me.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="main-content">
+            <h1>{{title}}</h1>            
+            <div class = "buttoncase">
+                <div class="description"><p >{{description}}</p></div>
+                <button onclick="window.location.href = '/idea';">IDEA LIST</button>
+                <button onclick="window.location.href = '/veto';">VETO LIST</button>                
+            </div>
+        </div>
+        {{>footer}}
+    </body>
+    
+
+</html> 

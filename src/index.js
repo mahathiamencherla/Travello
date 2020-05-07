@@ -42,6 +42,12 @@ app.get('/join', (req,res)=> {
     })
 })
 
+app.get('/me', (req,res)=> {
+    res.render('me', {
+        title: 'Welcome to your planner!',
+        description: 'Choose what you want to do'
+    })
+})
 
 app.use(plannerRouter)
 
