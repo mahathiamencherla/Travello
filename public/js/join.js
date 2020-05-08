@@ -13,15 +13,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
         password: pwd.value
       }
     }).then((result) => {
-      console.log(result.data.token)
-      axios.get("/me", {
-          headers: {
-              'Authorization': `Bearer ${result.data.token}`
-          }                
-      }).catch ((e) => {
-          msg.textContent = "Authorization failed"    //remove this when deploying
-      })
-      window.location.href = '/me'       
+      window.location.href = `/me/${result.data.token}`   
     }).catch((error) => {      
       msg.textContent = "Failed to join!"
   })      

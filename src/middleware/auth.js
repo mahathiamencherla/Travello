@@ -3,7 +3,7 @@ const Planner = require('../models/planner')
 
 const auth = async (req, res, next) => {
     try {
-        const token = req.header('Authorization').replace('Bearer ','')
+        const token = req.params.token
         const decoded = jwt.verify(token, 'thisistravelloplanner')
         const planner = await Planner.findOne({ _id: decoded._id, 'tokens.token': token })
 
