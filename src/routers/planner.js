@@ -31,13 +31,13 @@ router.post('/join', async (req,res) => {
     }
 })
 
-router.get('/me', auth, async (req, res) => {
+router.get('/me/:token', auth, async (req, res) => {
     //res.send(req.planner)
     const planner = req.planner
     res.render('me', {
         title: 'Welcome to your planner!',
         description: 'Choose what you want to do',
-        details: planner
+        details: planner.destination + '\n' + planner.peopleCount
     })
 })
 

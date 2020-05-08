@@ -31,15 +31,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
                 password: pwd.value
             }
             }).then((result) => {
-                console.log(result.data.token)
-                axios.get("/me", {
-                    headers: {
-                        'Authorization': `Bearer ${result.data.token}`
-                    }                
-                }).catch ((e) => {
-                    msg.textContent = "Authentication failed.."  
-                })
-                window.location.href = '/me'
+                window.location.href = `/me/${result.data.token}`
             }).catch ((e) => {
                 msg.textContent = "Unable to create!"
             })              
