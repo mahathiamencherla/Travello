@@ -32,7 +32,13 @@ router.post('/join', async (req,res) => {
 })
 
 router.get('/me', auth, async (req, res) => {
-    res.send(req.planner)
+    //res.send(req.planner)
+    const planner = req.planner
+    res.render('me', {
+        title: 'Welcome to your planner!',
+        description: 'Choose what you want to do',
+        details: planner
+    })
 })
 
 router.post('/logout', auth, async (req, res) => {

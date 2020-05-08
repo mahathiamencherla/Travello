@@ -20,7 +20,7 @@ const illegalPassword = (error) => {
 document.getElementById("sub_but").addEventListener("click", (e) => { 
     e.preventDefault() 
     if (pwd.value != re_pwd.value){
-        illegalPassword("Passwords dont match")         
+        illegalPassword("Passwords do not match")         
     }else{
         axios({
             method: 'post',
@@ -37,7 +37,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
                         'Authorization': `Bearer ${result.data.token}`
                     }                
                 }).catch ((e) => {
-                    msg.textContent = "Authorization failed"    //remove this when deploying
+                    msg.textContent = "Authentication failed.."  
                 })
                 window.location.href = '/me'
             }).catch ((e) => {
