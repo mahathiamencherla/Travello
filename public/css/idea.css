@@ -16,24 +16,27 @@ body{
 .sidebar{
     display: flex;
     flex-direction: column;  
-    background-color: thistle;
-    flex-grow: 1;
+    background-color: #7b5691;
+    flex-grow: 1.18;
+    
 }
 
 .info{
     display: flex; 
     flex-direction: column;   
     flex-grow: 0.2;    
-    background-color: blueviolet;
+    background-color: #7b5691;
     justify-content: safe;
+    border-bottom: 1px solid white;
 }
 
 .info p{  
-    margin-top: 50px;     
+    margin-top: 30px;     
     text-align: center;
     color: white;
     font-family: 'Montserrat';
-    font-weight: bolder;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .navigation{
@@ -43,26 +46,28 @@ body{
     
 }
 
-
-
 .navigation button{
     width: 80%;
     height: 50px;               
-    border-radius: 20px;
+    border-radius: 7px;
     margin: 0 auto;
     margin-top: 50px;
     font-weight: normal;
     font-size: 20px;
     font-family: 'Montserrat'; 
     background-color: white; 
-    border-color: #232141;
+    border: none;
     color: black
+}
+
+.navigation button:hover {
+  background-color: #edebeb;
 }
 
 .main{
     display: flex;
     flex-direction: column;  /* default is "row" ie left to right */
-    background-color: tomato;
+    background-color: white;
     flex-grow: 7;
 }
 
@@ -72,12 +77,12 @@ body{
     margin: 0 auto;
     padding: 40px 16px;
     font-size: 50px;
-    font-family: 'Montserrat';     
+    font-family: 'Montserrat';   
 }
 
 table {
     counter-reset: Serial;
-    font-family: arial, sans-serif;
+    font-family: 'Montserrat';
     border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
@@ -90,17 +95,23 @@ content: counter(Serial);  /* Display the counter */
 
 
 td, th {
-border: 1px solid #ffffff;
+border: 1px solid white;
 text-align: left;
 padding: 8px;
+border-radius: 7px;
 }
 
-tr:nth-child(odd) {
-background-color: #ffe5e5;
+tr:nth-child(odd){
+background-color: #edebeb;
 }
 
 tr:nth-child(even) {
-background-color: #ff9999;
+background-color: #d76c7f;
+color: white
+}
+
+tr:nth-child(even) button {
+  color: white;
 }
 
 th.slno{
@@ -142,25 +153,48 @@ table button{
     margin: 20px auto;
     display: flex;
     width: 90%;
-    justify-content: space-between;    
+     
+    font-family: 'Montserrat';
 }
 
 #newIdea{
-    width: 78%;  
+    width: 82%;  
     height: 30px;  
+    color: black
 }
 
 #cost{
-    width: 10%;
+    width: 11.5%;
+    color: black
 }
 
 #newIdeaBtn{
-    width: 8%;
+    width: 6%;
+    font-family: 'Montserrat';
+    border-radius: 7px;
+  border: none;
+  background-color: #d76c7f;
+  color: white
 }
-  
+
+#newIdeaBtn:hover {
+  background-color: #ba4747;
+}
+
 footer {
     text-align: center;    
     border-top: 1px solid white;        
 }
 
+input[type=text], select {
+  font-family: 'Montserrat';
+  padding-left: 3px;
+  border-radius: 7px;
+  border: none;
+  background-color: #edebeb;
+  color: black
+}
 
+::placeholder {
+  color: black;
+}
