@@ -17,7 +17,7 @@ body{
     display: flex;
     flex-direction: column;  
     background-color: thistle;
-    flex-grow: 1;
+    flex-grow: 1.14;
 }
 
 .info{
@@ -76,8 +76,7 @@ body{
 }
 
 table {
-    counter-reset: Serial;
-    font-family: arial, sans-serif;
+    counter-reset: Serial;    
     border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
@@ -162,5 +161,3 @@ footer {
     text-align: center;    
     border-top: 1px solid white;        
 }
-
-
