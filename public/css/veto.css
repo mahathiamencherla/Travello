@@ -16,7 +16,7 @@ body{
 .sidebar{
     display: flex;
     flex-direction: column;  
-    background-color: thistle;
+    background-color: #7b5691;
     flex-grow: 1;
 }
 
@@ -24,16 +24,19 @@ body{
     display: flex; 
     flex-direction: column;   
     flex-grow: 0.2;    
-    background-color: blueviolet;
+    background-color: #7b5691;
     justify-content: safe;
+    border-bottom: 1px solid white;
+    
 }
 
 .info p{  
-    margin-top: 50px;     
+    margin-top: 30px;     
     text-align: center;
     color: white;
     font-family: 'Montserrat';
-    font-weight: bolder;
+    font-size: 18px;
+    font-weight: normal;
 }
 
 .navigation{
@@ -48,7 +51,7 @@ body{
 button{
     width: 80%;
     height: 50px;               
-    border-radius: 20px;
+    border-radius: 7px;
     margin: 0 auto;
     margin-top: 50px;
     font-weight: normal;
@@ -56,13 +59,18 @@ button{
     font-family: 'Montserrat'; 
     background-color: white; 
     border-color: #232141;
+    border: none;
     color: black
 }
+
+button:hover {
+    background-color: #edebeb;
+  }
 
 .main{
     display: flex;
     flex-direction: column;  /* default is "row" ie left to right */
-    background-color: tomato;
+    background-color: white;
     flex-grow: 7;
 }
 
@@ -78,12 +86,12 @@ button{
 ol {    
     margin: 50px auto auto ;
     width: 80%;
-    background:#ff9999;
+    background:#edebeb;
     padding: 30px;
   }
 
 ol li {    
-    background:#ffe5e5;
+    background:#d76c7f;
     margin: 20px;
     text-indent: 10px;
     font-size: x-large;

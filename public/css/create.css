@@ -64,7 +64,7 @@ form {
     width: 450px;
     height: 350px;
     text-align: center;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-size: 12pt;
     color:white;
   }
@@ -77,7 +77,7 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
   }
   
   button {
