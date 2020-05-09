@@ -45,7 +45,7 @@ body{
 
 
 
-.navigation button{
+button{
     width: 80%;
     height: 50px;               
     border-radius: 20px;
@@ -75,63 +75,21 @@ body{
     font-family: 'Montserrat';     
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 90%;
-    margin: 0 auto;
+ol {    
+    margin: 50px auto auto ;
+    width: 80%;
+    background:#ff9999;
+    padding: 30px;
   }
 
-  
-  td, th {
-    border: 1px solid #ffffff;
+ol li {    
+    background:#ffe5e5;
+    margin: 20px;
+    text-indent: 10px;
+    font-size: x-large;
     text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #ffe5e5;
   }
 
-  tr:nth-child(even) {
-    background-color: #ff9999;
-  }
-
-  th.slno{
-      text-align: center;
-      font-weight: bolder;
-      width: 5%;
-  }
-
-  th.idea{
-    text-align: center;
-    font-weight: bolder;
-    width: 65%;
-  }  
-
-  th.cost{
-    text-align: center;
-    font-weight: bolder;
-    width: 10%;
-  }
-
-  th.veto{    
-    text-align: center;
-    font-weight: bolder;
-    width: 5%;
-    align-content: center;
-  }
-
-  .main button{
-      margin: auto auto;
-      width : 100%;
-      text-align: center;
-      font-weight: bolder;      
-      background-color: transparent;
-      outline: none;
-      border: none;
-  }
-  
 footer {
     text-align: center;    
     border-top: 1px solid white;        

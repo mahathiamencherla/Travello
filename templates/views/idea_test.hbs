@@ -22,8 +22,26 @@
             </div>
             <div class="main">
                 <h1>{{title}}</h1>                
-                <ol id="idea-list">                    
-                </ol>
+                <table>
+                    <tr>
+                        <th class="slno">Sl.No</th>
+                        <th class="idea">Idea</th>
+                        <th class="cost">Cost</th>
+                        <th class="veto">Veto </th>                        
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Idea 1</td>
+                        <td>100</td>
+                        <td><button>veto</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Idea 2</td>
+                        <td>200</td>
+                        <td><button>veto</button></td>
+                    </tr>
+                </table>
             </div>
         </div>    
         {{>footer}}
