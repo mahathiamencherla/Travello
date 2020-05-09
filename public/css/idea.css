@@ -76,61 +76,67 @@ body{
 }
 
 table {
+    counter-reset: Serial;
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
-  }
+}
 
-  
-  td, th {
-    border: 1px solid #ffffff;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #ffe5e5;
-  }
+table td:first-child:before {
+counter-increment: Serial;  /* Increment the serial number counter */
+content: counter(Serial);  /* Display the counter */
+}
 
-  tr:nth-child(even) {
-    background-color: #ff9999;
-  }
 
-  th.slno{
-      text-align: center;
-      font-weight: bolder;
-      width: 5%;
-  }
+td, th {
+border: 1px solid #ffffff;
+text-align: left;
+padding: 8px;
+}
 
-  th.idea{
-    text-align: center;
-    font-weight: bolder;
-    width: 65%;
-  }  
+tr:nth-child(odd) {
+background-color: #ffe5e5;
+}
 
-  th.cost{
-    text-align: center;
-    font-weight: bolder;
-    width: 10%;
-  }
+tr:nth-child(even) {
+background-color: #ff9999;
+}
 
-  th.veto{    
+th.slno{
     text-align: center;
     font-weight: bolder;
     width: 5%;
-    align-content: center;
-  }
+}
 
-  .main button{
-      margin: auto auto;
-      width : 100%;
-      text-align: center;
-      font-weight: bolder;      
-      background-color: transparent;
-      outline: none;
-      border: none;
-  }
+th.idea{
+text-align: center;
+font-weight: bolder;
+width: 65%;
+}  
+
+th.cost{
+text-align: center;
+font-weight: bolder;
+width: 10%;
+}
+
+th.veto{    
+text-align: center;
+font-weight: bolder;
+width: 5%;
+align-content: center;
+}
+
+.main button{
+    margin: auto auto;
+    width : 100%;
+    text-align: center;
+    font-weight: bolder;      
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
   
 footer {
     text-align: center;    
