@@ -75,17 +75,17 @@ button{
     font-family: 'Montserrat';     
 }
 
-ul {    
+ol {    
     margin: 50px auto auto ;
     width: 80%;
     background:#ff9999;
     padding: 30px;
   }
 
-ul li {
-    
+ol li {    
     background:#ffe5e5;
-    margin: 15px;
+    margin: 20px;
+    text-indent: 10px;
     font-size: x-large;
     text-align: left;
   }

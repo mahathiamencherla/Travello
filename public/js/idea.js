@@ -6,14 +6,14 @@ const arr = [
     "idea 5"
 ]
 
-const ul = document.getElementById("idea-list")
+const ol = document.getElementById("idea-list")
 const btn = document.getElementById("btn")
 
 document.addEventListener("DOMContentLoaded", (e) =>{     
     arr.forEach((idea) => {        
         const li = document.createElement("li")
         li.innerText = idea
-        ul.append(li)        
+        ol.append(li)        
     })
 })
 
