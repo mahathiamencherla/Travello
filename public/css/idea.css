@@ -128,7 +128,7 @@ width: 5%;
 align-content: center;
 }
 
-.main button{
+table button{
     margin: auto auto;
     width : 100%;
     text-align: center;
@@ -136,6 +136,26 @@ align-content: center;
     background-color: transparent;
     outline: none;
     border: none;
+}
+
+.newIdeaForm{
+    margin: 20px auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;    
+}
+
+#newIdea{
+    width: 78%;  
+    height: 30px;  
+}
+
+#cost{
+    width: 10%;
+}
+
+#newIdeaBtn{
+    width: 8%;
 }
   
 footer {
