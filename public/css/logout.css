@@ -1,0 +1,36 @@
+body {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    max-width: 650px;     /* set width of body */
+    margin: 0 auto;       /* margin value for top and bottom ;  margin value for left and right */
+    padding: 0 16px;  
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg, #da1f85 5%, #5b1b68 95%);
+    height: 100vh;
+    text-align: center;
+}
+
+.main-content {
+    margin-top: 40px;
+    border-radius: 6px;
+   
+    transform: translate3d(0, 50px, 0);
+    animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+footer {
+    text-align: center;
+    color: black;
+    border-top: 1px solid black;
+    margin-top: 185px;
+    padding: 16px 0;
+}
