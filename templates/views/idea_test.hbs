@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>    
+    <head>
+        <title>{{title}}</title>
+        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="stylesheet" href="/css/idea.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="Container">
+            <div class="sidebar">
+                <div class="info">
+                    <p>Planning: Goa</p>  
+                    <p>Group no: 10</p>              
+                    
+                </div>
+                <div class="navigation">
+                    <button onclick="window.location.href = '/testidea';">Idea List</button>
+                    <button onclick="window.location.href = '/testveto';">Veto List</button>
+                    <button onclick="window.location.href = '/logout';">Logout</button>
+                </div>
+            </div>
+            <div class="main">
+                <h1>{{title}}</h1>                
+                <table id="ideaTable">
+                    <tr>
+                        <th class="slno">Sl.No</th>
+                        <th class="idea">Idea</th>
+                        <th class="cost">Cost</th>
+                        <th class="veto">Veto </th>                        
+                    </tr>
+                </table>
+                <div class="newIdeaForm">
+                    <input type="text" id="newIdea" placeholder="Type your new idea here!">                                            
+                    <input type="text" id="cost" placeholder="Estimated cost" >
+                    <button id="newIdeaBtn">Submit!</button>
+                </div>
+            </div>
+        </div>    
+        {{>footer}}
+        <script src= "/js/idea.js" ></script>
+    </body>

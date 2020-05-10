@@ -1,0 +1,138 @@
+body{
+    margin: 0px;
+    color: #232141;     
+    font-family: 'Montserrat';  
+    font-weight: normal;       
+    background-image: -webkit-linear-gradient(left, #7b5691, #7b5691 17.05%, transparent 17.05%, transparent 100%);      
+}
+
+.Container{
+    max-width: 100%;      
+    background-size: 100%;
+    display: flex;    
+    min-height: 95vh;  
+    font-weight: normal;  
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;  
+    background-color: #7b5691;
+    flex-grow: 1.07;
+}
+
+.info{
+    display: flex; 
+    flex-direction: column;   
+    flex-grow: 0.2;    
+    background-color: #7b5691;
+    justify-content: safe;
+    border-bottom: 1px solid white;
+    
+}
+
+.info p{  
+    margin-top: 30px;     
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 4;
+    
+}
+
+
+
+button{
+    width: 80%;
+    height: 50px;               
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: 'Montserrat'; 
+    background-color: white; 
+    border-color: #232141;
+    border: none;
+    color: black
+}
+
+button:hover {
+    background-color: #edebeb;
+  }
+
+.main{
+    display: flex;
+    flex-direction: column;  /* default is "row" ie left to right */
+    background-color: white;
+    flex-grow: 7;
+}
+
+.main h1{
+    text-align: center;
+    margin-top: 70px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    font-size: 50px;
+    font-family: 'Montserrat';     
+}
+
+table {
+    counter-reset: Serial;
+    font-family: 'Montserrat';
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
+
+table td:first-child:before {
+counter-increment: Serial;  /* Increment the serial number counter */
+content: counter(Serial);  /* Display the counter */
+}
+
+
+td, th {
+border: 1px solid white;
+text-align: left;
+padding: 8px;
+border-radius: 7px;
+}
+
+tr:nth-child(odd){
+background-color: #edebeb;
+}
+
+tr:nth-child(even) {
+background-color: #d76c7f;
+color: white
+}
+
+tr:nth-child(even) button {
+  color: white;
+}
+
+th.slno{
+    text-align: center;
+    font-weight: bolder;
+    width: 5%;
+}
+
+th.veto{
+text-align: center;
+font-weight: bolder;
+width: 80%;
+}
+
+footer {
+    padding: 0 0 0 53%;   
+    /* border-top: 1px solid white;             */
+}
+
+

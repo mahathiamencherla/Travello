@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>    
+    <head>
+        <title>{{title}}</title>
+        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="stylesheet" href="/css/veto.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="Container">
+            <div class="sidebar">
+                <div class="info">
+                    <p>Planning: Goa</p>  
+                    <p>Group no: 10</p>              
+                    
+                </div>
+                <div class="navigation">
+                    <button onclick="window.location.href = '/testidea';">Idea List</button>
+                    <button onclick="window.location.href = '/testveto';">Veto List</button>
+                    <button onclick="window.location.href = '/testveto';">Logout</button>
+                </div>
+            </div>
+            <div class="main">
+                <h1>{{title}}</h1>                
+                <table id="vetoTable">
+                    <tr>
+                        <th class="slno">Sl.No</th>
+                        <th class="veto">Veto</th>
+                    </tr>                    
+                </table>               
+            </div>
+        </div>    
+        {{>footer}}
+        <script src= "/js/veto.js" ></script>
+    </body>

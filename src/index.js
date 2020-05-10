@@ -44,6 +44,27 @@ app.get('/join', (req,res)=> {
     })
 })
 
+app.get('/testidea', (req,res)=> {
+    res.render('idea_test', {
+        title: 'IDEA LIST',
+        description: 'Start Thinking!'
+    })
+})
+
+app.get('/testveto', (req,res)=> {
+    res.render('veto_test', {
+        title: 'VETO LIST',
+        description: 'Maybe Next time!'
+    })
+})
+
+app.get('/logout', (req,res)=> {
+    res.render('logout', {
+        title: 'We\'re sad you\'re leaving..',
+        description: 'Come back soon!'
+    })
+})
+
 // app.get('/me', (req,res)=> {
 //     res.render('me', {
 //         title: 'Welcome to your planner!',
