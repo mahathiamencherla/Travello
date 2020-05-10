@@ -2,7 +2,8 @@ body{
     margin: 0px;
     color: #232141;     
     font-family: 'Montserrat';  
-    font-weight: normal;     
+    font-weight: normal;       
+    background-image: -webkit-linear-gradient(left, #7b5691, #7b5691 17.05%, transparent 17.05%, transparent 100%);      
 }
 
 .Container{
@@ -17,7 +18,7 @@ body{
     display: flex;
     flex-direction: column;  
     background-color: #7b5691;
-    flex-grow: 1;
+    flex-grow: 1.07;
 }
 
 .info{
@@ -83,24 +84,55 @@ button:hover {
     font-family: 'Montserrat';     
 }
 
-ol {    
-    margin: 50px auto auto ;
-    width: 80%;
-    background:#edebeb;
-    padding: 30px;
-  }
+table {
+    counter-reset: Serial;
+    font-family: 'Montserrat';
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+}
 
-ol li {    
-    background:#d76c7f;
-    margin: 20px;
-    text-indent: 10px;
-    font-size: x-large;
-    text-align: left;
-  }
+table td:first-child:before {
+counter-increment: Serial;  /* Increment the serial number counter */
+content: counter(Serial);  /* Display the counter */
+}
+
+
+td, th {
+border: 1px solid white;
+text-align: left;
+padding: 8px;
+border-radius: 7px;
+}
+
+tr:nth-child(odd){
+background-color: #edebeb;
+}
+
+tr:nth-child(even) {
+background-color: #d76c7f;
+color: white
+}
+
+tr:nth-child(even) button {
+  color: white;
+}
+
+th.slno{
+    text-align: center;
+    font-weight: bolder;
+    width: 5%;
+}
+
+th.veto{
+text-align: center;
+font-weight: bolder;
+width: 80%;
+}
 
 footer {
-    text-align: center;    
-    border-top: 1px solid white;        
+    padding: 0 0 0 53%;   
+    /* border-top: 1px solid white;             */
 }
 
 
