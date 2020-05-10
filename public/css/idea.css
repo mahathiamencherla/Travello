@@ -150,9 +150,18 @@ table button{
     height: 36px;
     text-align: center;
     font-weight: bolder;      
+    border-radius: 7px;
     background-color: transparent;
     outline: none;
     border: none;
+}
+
+tr:nth-child(even) button:hover{
+    background-color: #ba4747
+}
+
+tr:nth-child(odd) button:hover{
+    background-color: #d6d0d0
 }
 
 .newIdeaForm{
@@ -178,9 +187,9 @@ table button{
     width: 6%;
     font-family: 'Montserrat';
     border-radius: 7px;
-  border: none;
-  background-color: #d76c7f;
-  color: white
+    border: none;
+    background-color: #d76c7f;
+    color: white
 }
 
 #newIdeaBtn:hover {
