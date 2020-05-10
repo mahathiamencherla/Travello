@@ -1,18 +1,33 @@
-const arr = [
-    "veto 1",
-    "veto 2",
-    "veto 3",
-    "veto 4",
-    "veto 5"
+const table = document.querySelector("#vetoTable")
+
+list = [
+    {
+        description: "veto 1" ,
+        vetoCount: "4",
+        cost: "200"
+    },{
+        description: "veto 2" ,
+        vetoCount: "3",
+        cost: "300"
+    },{
+        description: "veto 3" ,
+        vetoCount: "1",
+        cost: "400"
+    },{
+        description: "veto 4" ,
+        vetoCount: "2",
+        cost: "400"
+    },
 ]
 
-const ol = document.getElementById("veto-list")
+document.addEventListener("DOMContentLoaded", (e) => {
+    list.forEach((idea) => {
+        var description = idea.description        
 
-document.addEventListener("DOMContentLoaded", (e) =>{     
-    arr.forEach((idea) => {        
-        const li = document.createElement("li")
-        li.innerText = idea
-        ol.append(li)        
+        var row = table.insertRow(-1)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)            
+
+        cell2.innerText = description                
     })
-})
-
+}) 
