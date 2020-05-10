@@ -27,37 +27,29 @@ h1 {
     margin-bottom: 16px;
     text-align: center;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .description {
     font-size: 32px;
     text-align: center;
-    font-weight: bolder;    
+    font-weight: normal;    
 }
 
 
-.buttoncase {
-    margin: 0 auto;
-    padding: 82px 32px;
-    background-color: transparent;
-    background-clip: content-box;
-    border-radius: 125px;
-    height: 350px;
-}
+
 
 
 button{
-    width: 200px;
-    height: 200px;   
-    margin: 50px 42px; 
+    width: 35%;
+    height: 125px;
+    margin: 100px 42px; 
     padding: 32px 16px;    
-    border-radius: 50px;
-    
+    border-radius: 30px;
+    border: none;
     font-weight: normal;
     font-size: 30px;
     font-family: 'Montserrat'; 
     background-color: #232141; 
-    border-color: #232141;
     color: white
 }

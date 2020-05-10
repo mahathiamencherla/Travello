@@ -58,6 +58,12 @@ app.get('/testveto', (req,res)=> {
     })
 })
 
+app.get('/logout', (req,res)=> {
+    res.render('logout', {
+        title: 'We\'re sad you\'re leaving..',
+        description: 'Come back soon!'
+    })
+})
 
 // app.get('/me', (req,res)=> {
 //     res.render('me', {
