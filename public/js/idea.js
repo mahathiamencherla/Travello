@@ -42,10 +42,9 @@ idea_btn.addEventListener("click", (e) => {
     window.location.href = `/idea/${token}`
 })
 
-veto_btn.addEventListener("click", (e) => {
-    console.log("clicked")
+veto_btn.addEventListener("click", (e) => {    
     e.preventDefault()
-    window.location.href = `/testveto`
+    window.location.href = `/veto/${token}`
 })
 
 

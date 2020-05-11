@@ -6,6 +6,10 @@ const veto_btn = document.querySelector("#veto")
 
 idea_btn.addEventListener("click", (e) => {    
     e.preventDefault()    
-    window.location.href = `/idea/${token}`
-    
+    window.location.href = `/idea/${token}`    
+})
+
+veto_btn.addEventListener("click", (e) => {    
+    e.preventDefault()    
+    window.location.href = `/veto/${token}`    
 })

@@ -45,7 +45,7 @@ router.get('/idea/data/:token', auth, async (req, res) => { //get data
     }
 })
 
-router.get('/veto/:token', auth, async (req, res) => {
+router.get('/veto/data/:token', auth, async (req, res) => {
     const major = Math.ceil(req.planner.peopleCount/2)
     try{
         const list = await List.find({ vetoCount: {$gt: major}, owner: req.planner._id})
@@ -58,4 +58,11 @@ router.get('/veto/:token', auth, async (req, res) => {
     }
 })
 
+router.get('/veto/:token', auth, async(req, res) => {
+    res.render('veto_test', {
+        title: 'VETO LIST',
+        description: 'Maybe Next time!'    
+    })
+
+})
 module.exports = router
