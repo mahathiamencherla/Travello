@@ -18,11 +18,11 @@ body {
     height: 400px;
     padding: 30px;
     margin: 50px 38px;
-    border: 5px solid #302140;
+    border: 5px solid #2A274D;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 200px 200px;
-    background-color: #302140;
+    background-color: #2A274D;
     border-radius: 25px;
     position: absolute;
 	overflow: visible;
@@ -37,11 +37,11 @@ body {
     width: 450px;
     height: 350px;
     padding: 30px;  
-    border: 5px solid #68487b;
+    border: 5px solid #4C488C;
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: 200px 200px;
-    background-color: #68487b;
+    background-color: #4C488C;
     border-radius: 25px;
     position: absolute;
 	overflow: visible;
@@ -52,7 +52,7 @@ body {
 
   footer {
     color: #202024;
-    border-top: 1px solid #626269;
+    border-top: 1px solid #232141;
     margin: 92px auto ;
     padding: 16px 0;
     
@@ -60,7 +60,7 @@ body {
 
 form {
     border-radius: 5px;
-    background-color: #68487b;
+    background-color: #4C488C;
     width: 450px;
     height: 350px;
     text-align: center;

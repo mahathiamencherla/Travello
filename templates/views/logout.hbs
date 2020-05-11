@@ -3,7 +3,7 @@
 <html>    
     <head>
         <title>Logout</title>
-        <!-- <link rel="icon" href="images/note.png"> -->
+        <link rel="icon" href="/img/travelloicon.png">
         <link rel="stylesheet" href="/css/logout.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
@@ -23,6 +23,12 @@
         
         {{>footer}}
     </body>
-    
-
+    <script type="text/javascript">   
+    function Redirect() 
+    {  
+        window.location="/"; 
+    } 
+    document.write("You will be redirected to the home page in 10 seconds..."); 
+    setTimeout('Redirect()', 10000);   
+</script>
 </html> 

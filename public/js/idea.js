@@ -49,7 +49,17 @@ veto_btn.addEventListener("click", (e) => {
     window.location.href = `/veto/${token}`
 })
 
-
+logout.addEventListener("click", (e) => {  
+    e.preventDefault()
+    axios({
+        method: 'post',
+        url: `/logout/${token}`
+    }).then((result) => {
+        console.log(result)
+        window.location.href = `/logout`  
+    })
+    
+})
 
 
 const diplayList = function(list){

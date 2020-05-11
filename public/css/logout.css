@@ -2,35 +2,34 @@ body {
     font-family: 'Montserrat';
     font-size: 20px;
     max-width: 650px;     /* set width of body */
-    margin: 0 auto;       /* margin value for top and bottom ;  margin value for left and right */
-    padding: 0 16px;  
-    background-size: 200% 100% !important;
-    animation: move 10s ease infinite;
-    transform: translate3d(0, 0, 0);
-    background: linear-gradient(45deg, #da1f85 5%, #5b1b68 95%);
+    margin: 100px auto;       /* margin value for top and bottom ;  margin value for left and right */
+    padding: 0 16px;
+    background-image: url("../img/home_bg.jpg") ;
+    background-size: 100%;
     height: 100vh;
     text-align: center;
+    color: #2A274D
 }
 
 .main-content {
     margin-top: 40px;
     border-radius: 6px;
-   
-    transform: translate3d(0, 50px, 0);
-    animation: arrive 500ms ease-in-out 0.9s forwards;
+    color: #2A274D
 }
 
 a {
     text-decoration: none;
-    color: white;
+    background-color: #d76c7f;
+    color: #2A274D;
+    border-radius: 5px;
 }
 
 
 
 footer {
     text-align: center;
-    color: black;
-    border-top: 1px solid black;
-    margin-top: 185px;
+    color: #2A274D;
+    border-top: 1px solid #2A274D;
+    margin-top: 300px;
     padding: 16px 0;
 }
