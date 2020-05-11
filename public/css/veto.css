@@ -81,7 +81,16 @@ button:hover {
     margin: 0 auto;
     padding: 40px 16px;
     font-size: 50px;
-    font-family: 'Montserrat';     
+    font-family: 'Montserrat';   
+}
+
+#description {
+    text-align: center;
+    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px 16px;
+    font-size: 25px;
+    font-family: 'Montserrat'; 
 }
 
 table {
@@ -131,8 +140,15 @@ width: 80%;
 }
 
 footer {
+    text-align: right;
     padding: 0 0 0 53%;   
     /* border-top: 1px solid white;             */
 }
 
+footer a {
+    text-decoration: none;
+    background-color: #d76c7f;
+    color: #2A274D;
+    border-radius: 5px;
+  }
 

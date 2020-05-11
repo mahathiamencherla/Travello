@@ -51,11 +51,19 @@ body {
   }  
 
   footer {
-    color: #202024;
-    border-top: 1px solid #232141;
-    margin: 92px auto ;
+    text-align: right;
+    color: #2A274D;
+    border-top: 1px solid #2A274D;
+    margin: 40px auto ;
     padding: 16px 0;
     
+}
+
+footer a {
+  text-decoration: none;
+  background-color: #d76c7f;
+  color: #2A274D;
+  border-radius: 5px;
 }
 
 form {
@@ -103,5 +111,5 @@ input[type=text], select {
   }
 
  #home {
-    color: #202024
+    color: #2A274D
   }
