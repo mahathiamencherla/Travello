@@ -1,6 +1,7 @@
 const sub_btn = document.querySelector("#newIdeaBtn")
 const idea_btn = document.querySelector("#idea_btn")
 const veto_btn = document.querySelector("#veto_btn")
+const logout = document.querySelector("#logout")
 const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
 const table = document.querySelector("#ideaTable")
@@ -55,8 +56,12 @@ logout.addEventListener("click", (e) => {
         method: 'post',
         url: `/logout/${token}`
     }).then((result) => {
-        console.log(result)
-        window.location.href = `/logout`  
+        console.log(result.data.success)
+        if(result.data.success === true) {
+            window.location.href = `/logout/success`  
+        } else {
+            window.location.href = `/logout/failure`
+        }
     })
     
 })

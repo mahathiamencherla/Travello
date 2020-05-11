@@ -44,10 +44,17 @@ app.get('/join', (req,res)=> {
     })
 })
 
-app.get('/logout', (req,res)=> {
+app.get('/logout/success', (req,res)=> {
     res.render('logout', {
         title: 'We\'re sad you\'re leaving..',
         description: 'Come back soon!'
+    })
+})
+
+app.get('/logout/failure', (req,res)=> {
+    res.render('logout', {
+        title: 'Can\'t log you out..',
+        description: 'Try again!'
     })
 })
 
