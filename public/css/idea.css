@@ -10,7 +10,7 @@ body{
     max-width: 100%;      
     background-size: 100%;
     display: flex;    
-    min-height: 95vh;  
+      
     font-weight: normal;  
 }
 
@@ -70,6 +70,7 @@ body{
     flex-direction: column;  /* default is "row" ie left to right */
     background-color: white;
     flex-grow: 7;
+    min-height: 95vh;
 }
 
 .main h1{
@@ -213,7 +214,7 @@ footer {
 
 footer a {
     text-decoration: none;
-    background-color: #d76c7f;
+    background-color: #f6fafb;
     color: #2A274D;
     border-radius: 5px;
   }
