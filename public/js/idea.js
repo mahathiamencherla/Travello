@@ -1,34 +1,64 @@
 const sub_btn = document.querySelector("#newIdeaBtn")
+const idea_btn = document.querySelector("#idea_btn")
+const veto_btn = document.querySelector("#veto_btn")
 const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
 const table = document.querySelector("#ideaTable")
 
+const pathname = window.location.pathname;
+const token = pathname.replace("/idea/","")
+
+axios({
+    method: 'get',
+    url: `data/${token}`    
+}).then((result) => {
+    list = result.data
+    diplayList(list)    
+})
 
 
-list = [
-    {
-        description: "idea 1" ,
-        vetoCount: "4",
-        cost: "200"
-    },{
-        description: "idea 2" ,
-        vetoCount: "3",
-        cost: "300"
-    },{
-        description: "idea 3" ,
-        vetoCount: "1",
-        cost: "400"
-    },{
-        description: "idea 4" ,
-        vetoCount: "2",
-        cost: "400"
-    },
-]
+sub_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    inputIdea = newIdea.value
+    inputCost = cost.value
+    axios({
+        method: 'post',
+        url: `/idea/${token}`,
+        data: {
+          description: inputIdea,
+          cost: inputCost
+        }
+      }).then((result) => {
+          newIdea.value = ""
+          cost.value = ""
+          idea = result.data
+          console.log(idea)
+          displayRow(idea)          
+      })
+})
 
-document.addEventListener("DOMContentLoaded", (e) => {
+idea_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.href = `/idea/${token}`
+})
+
+veto_btn.addEventListener("click", (e) => {
+    console.log("clicked")
+    e.preventDefault()
+    window.location.href = `/testveto`
+})
+
+
+
+
+const diplayList = function(list){
     list.forEach((idea) => {
-        var description = idea.description
-        var vetoCount = idea.vetoCount
+        displayRow(idea)    
+    })
+}
+
+const displayRow = function(idea){
+        var description = idea.description        
         var cost = idea.cost
 
         var row = table.insertRow(-1)
@@ -44,13 +74,4 @@ document.addEventListener("DOMContentLoaded", (e) => {
         cell2.innerText = description
         cell3.innerText = cost
         cell4.appendChild(btn)
-        
-    })
-}) 
-
-sub_btn.addEventListener("click", (e) => {
-    e.preventDefault()
-    inputIdea = newIdea.value
-    inputCost = cost.value
-    //axios.post()
-})
+}

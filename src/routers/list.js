@@ -23,7 +23,16 @@ router.post('/idea/:token', auth, async (req, res) => {
     }
 })
 
-router.get('/idea/:token', auth, async (req, res) => {
+router.get('/idea/:token', auth, async(req, res) => {
+    res.render('idea_test', {
+        title: 'IDEA LIST',
+        description: 'Start Thinking!'
+    })
+
+})
+
+
+router.get('/idea/data/:token', auth, async (req, res) => { //get data
     const major = Math.ceil(req.planner.peopleCount/2)
     try{
         const list = await List.find({ vetoCount: {$lt: major}, owner: req.planner._id})
