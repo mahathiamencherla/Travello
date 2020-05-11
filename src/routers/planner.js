@@ -37,7 +37,8 @@ router.get('/me/:token', auth, async (req, res) => {
     res.render('me', {
         title: 'Welcome to your planner!',
         description: 'Choose what you want to do',
-        details: planner.destination + '\n' + planner.peopleCount
+        dest: "Your destination: " + planner.destination,
+        grpNo: "Number of people: "  + planner.peopleCount
     })
 })
 

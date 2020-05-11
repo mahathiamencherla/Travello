@@ -1,6 +1,7 @@
 const sub_btn = document.querySelector("#newIdeaBtn")
 const idea_btn = document.querySelector("#idea_btn")
 const veto_btn = document.querySelector("#veto_btn")
+const logout = document.querySelector("#logout")
 const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
 const table = document.querySelector("#ideaTable")
