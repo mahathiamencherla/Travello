@@ -48,16 +48,10 @@ router.post('/logout/:token', auth, async (req, res) => {
         })
         
         await req.planner.save()
-        //res.send()
-        res.render('logout', {
-            title: 'We\'re sad you\'re leaving..',
-            description: 'Come back soon!'
-        })
+        res.json({success: true})
+        
     } catch (error) {
-        res.render('logout', {
-            title: 'Cannot log you out..',
-            description: 'Try again.'
-        })
+        res.json({success: false})
     }
 })
 

@@ -55,8 +55,12 @@ logout.addEventListener("click", (e) => {
         method: 'post',
         url: `/logout/${token}`
     }).then((result) => {
-        console.log(result)
-        window.location.href = `/logout`  
+        console.log(result.data.success)
+        if(result.data.success === true) {
+            window.location.href = `/logout/success`  
+        } else {
+            window.location.href = `/logout/failure`
+        }
     })
     
 })
