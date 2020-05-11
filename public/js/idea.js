@@ -19,8 +19,10 @@ axios({
 
 sub_btn.addEventListener("click", (e) => {
     e.preventDefault()
-    inputIdea = newIdea.value
-    inputCost = cost.value
+    inputIdea = newIdea.value    
+    inputCost = !cost.value ? 0 : cost.value 
+    
+
     axios({
         method: 'post',
         url: `/idea/${token}`,
