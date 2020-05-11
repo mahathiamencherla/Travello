@@ -33,7 +33,7 @@ button{
     font-weight: bolder;
     font-size: xx-large;
     font-family: 'Montserrat'; 
-    background-color: #232141; 
+    background-color: #2A274D; 
     color:  #d76c7f;
     opacity: 0.8;
 }
@@ -41,7 +41,7 @@ button{
 footer {
     text-align: center;
     color: #232141;
-    border-top: 1px solid #232141;
+    border-top: 1px solid #2A274D;
     margin-top: 320px;
     padding: 16px 0;
 }

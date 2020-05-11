@@ -41,16 +41,23 @@ router.get('/me/:token', auth, async (req, res) => {
     })
 })
 
-router.post('/logout', auth, async (req, res) => {
+router.post('/logout/:token', auth, async (req, res) => {
     try {
         req.planner.tokens = req.planner.tokens.filter((token) => {
-            return token.token !== req.token
+            return token.token !== req.params.token
         })
         
         await req.planner.save()
-        res.send()
+        //res.send()
+        res.render('logout', {
+            title: 'We\'re sad you\'re leaving..',
+            description: 'Come back soon!'
+        })
     } catch (error) {
-        res.status(500).send()
+        res.render('logout', {
+            title: 'Cannot log you out..',
+            description: 'Try again.'
+        })
     }
 })
 

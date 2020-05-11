@@ -9,13 +9,15 @@ body {
     display: flex;
     flex-direction: column;  /* default is "row" ie left to right */
     min-height: 100vh;  
-    font-weight: normal;     
+    font-weight: normal;   
+    
+      
 }
 
 footer {
     text-align: center;
-    color: white;
-    border-top: 1px solid white;
+    color: #232141;
+    border-top: 1px solid #232141;
     margin-top: 185px;
     padding: 16px 0;
 }
@@ -52,4 +54,14 @@ button{
     font-family: 'Montserrat'; 
     background-color: #232141; 
     color: white
+}
+
+.logo {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.imglogo {
+    width: 300px;
 }
