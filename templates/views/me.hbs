@@ -12,13 +12,15 @@
             <h1>{{title}}</h1>            
             <div class = "buttoncase">
                 <div class="description"><p >{{description}}</p></div>
-                <button onclick="window.location.href = '/idea';">IDEA LIST</button>
-                <button onclick="window.location.href = '/veto';">VETO LIST</button>                
+                <button id = "idea">IDEA LIST</button>
+                <button id="veto" >VETO LIST</button>                
             </div>
         </div>
         <p>{{details}}</p>
         <a id = "home" href="/logout">LOGOUT</a>
         {{>footer}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src= "/js/me.js" > </script>
     </body>
     
 

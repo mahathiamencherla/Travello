@@ -1,33 +1,39 @@
 const table = document.querySelector("#vetoTable")
 
-list = [
-    {
-        description: "veto 1" ,
-        vetoCount: "4",
-        cost: "200"
-    },{
-        description: "veto 2" ,
-        vetoCount: "3",
-        cost: "300"
-    },{
-        description: "veto 3" ,
-        vetoCount: "1",
-        cost: "400"
-    },{
-        description: "veto 4" ,
-        vetoCount: "2",
-        cost: "400"
-    },
-]
+const pathname = window.location.pathname;
+const token = pathname.replace("/veto/","")
 
-document.addEventListener("DOMContentLoaded", (e) => {
+axios({
+    method: 'get',
+    url: `data/${token}`    
+}).then((result) => {
+    list = result.data
+    diplayList(list)    
+})
+
+idea_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.href = `/idea/${token}`
+})
+
+veto_btn.addEventListener("click", (e) => {
+    console.log("clicked")
+    e.preventDefault()
+    window.location.href = `/veto/${token}`
+})
+
+const diplayList = function(list){
     list.forEach((idea) => {
-        var description = idea.description        
-
-        var row = table.insertRow(-1)
-        var cell1 = row.insertCell(0)
-        var cell2 = row.insertCell(1)            
-
-        cell2.innerText = description                
+        displayRow(idea)    
     })
-}) 
+}
+
+const displayRow = function(idea){
+    var description = idea.description        
+
+    var row = table.insertRow(-1)
+    var cell1 = row.insertCell(0)
+    var cell2 = row.insertCell(1)            
+
+    cell2.innerText = description 
+}
