@@ -81,6 +81,15 @@ body{
     font-family: 'Montserrat';   
 }
 
+#description {
+    text-align: center;
+    margin-top: 20px;
+    margin: 0 auto;
+    padding: 20px 16px;
+    font-size: 25px;
+    font-family: 'Montserrat'; 
+}
+
 table {
     counter-reset: Serial;
     font-family: 'Montserrat';

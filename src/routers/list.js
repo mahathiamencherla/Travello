@@ -26,7 +26,9 @@ router.post('/idea/:token', auth, async (req, res) => {
 router.get('/idea/:token', auth, async(req, res) => {
     res.render('idea_test', {
         title: 'IDEA LIST',
-        description: 'Start Thinking!'
+        description: 'Start Thinking!',
+        destination: req.planner.destination,
+        grpNo: req.planner.peopleCount
     })
 
 })
@@ -61,7 +63,9 @@ router.get('/veto/data/:token', auth, async (req, res) => {
 router.get('/veto/:token', auth, async(req, res) => {
     res.render('veto_test', {
         title: 'VETO LIST',
-        description: 'Maybe Next time!'    
+        description: 'Maybe Next time!',
+        destination: req.planner.destination,
+        grpNo: req.planner.peopleCount    
     })
 
 })
