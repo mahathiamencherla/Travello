@@ -11,8 +11,22 @@
         <div class="main-content">
             <h1>{{title}}</h1>      
             <div id="share">                
-                <button id="share_btn">SHARE</button>
-            </div>      
+                <div class="tooltip">
+                    <button id="share_btn" class="Sbtn">SHARE</button><br><br>
+                    <span class="tooltiptext">Get shareable link</span>
+                </div>
+            </div>   
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <input id="url">                      
+                    <button class="btn" data-clipboard-target="#url">
+                        <img src="/img/clippy.svg">
+                    </button>
+                </div>
+            </div>             
             <div class = "buttoncase">
                 <div class="description"><p >{{description}}</p></div>
                 <button id = "idea">IDEA LIST</button>
@@ -23,9 +37,8 @@
         <p>{{grpNo}}</p>
         <button id="logout">Logout</button>
         {{>footer}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/me.js" > </script>
-    </body>
-    
-
+    </body> 
 </html> 

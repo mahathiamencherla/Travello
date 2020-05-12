@@ -48,10 +48,6 @@ h1 {
     font-weight: normal;    
 }
 
-
-
-
-
 button{
     width: 35%;
     height: 125px;
@@ -63,7 +59,8 @@ button{
     font-size: 30px;
     font-family: 'Montserrat'; 
     background-color: #232141; 
-    color: white
+    color: white;
+    outline: none;
 }
 
 .logo {
