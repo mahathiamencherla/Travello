@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 const Planner = require('../models/planner')
 
+
 const auth = async (req, res, next) => {
     try {
         // auth flow assumes that the token is given as a url parameter
@@ -16,8 +17,12 @@ const auth = async (req, res, next) => {
         req.planner = planner
         next ()
 
-    } catch(e) {
-        res.status(401).send({ error: 'Please Authenticate.' })
+    } catch(error) {
+    
+    // res.redirect(401, '/join');  
+    res.set('Content-Type', 'text/html');
+    res.status(401).send('<!DOCTYPE html><html><head><title>Invalid!</title><link rel="icon" href="/img/travelloicon.png"><link rel="stylesheet" href="/css/logout.css"><link href=\'https://fonts.googleapis.com/css?family=Montserrat\' rel=\'stylesheet\'></head><body><div class="logo"><img class="imglogo" src="/img/travello2.png"></div><div><p>Invalid login credentials! Try again</p></div></body><script type="text/javascript">function Redirect() { window.location="/join"; } document.write("You will be redirected to the login page in 5 seconds..."); setTimeout(\'Redirect()\', 5000); </script></html> ')
+      
     }
 }
 

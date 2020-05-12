@@ -53,3 +53,4 @@ window.onclick = function(event) {   //If user clicks anywhere outside of the mo
       modal.style.display = "none";
     }
   }
+
