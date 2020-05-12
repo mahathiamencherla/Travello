@@ -12,8 +12,7 @@
             <div class="sidebar">
                 <div class="info">
                     <p>Destination: {{destination}}</p>  
-                    <p>Number of People: {{grpNo}}</p>              
-                    
+                    <p>Number of People: {{grpNo}}</p>         
                 </div>
                 <div class="navigation">
                     <button id="idea_btn" >Idea List</button>
@@ -23,23 +22,25 @@
             </div>
             <div class="main">
                 <h1>{{title}}</h1>  
-                <p id="description">{{description}}</p>              
-                <table id="ideaTable">
-                    <tr>
-                        <th class="slno">Sl.No</th>
-                        <th class="idea">Idea</th>
-                        <th class="cost">Cost</th>
-                        <th class="veto">Veto </th>                        
-                    </tr>
-                </table>
-                <div class="newIdeaForm">
-                    <input type="text" id="newIdea" placeholder="Type your new idea here!">                                            
-                    <input type="text" id="cost" placeholder="Estimated cost" >
-                    <button id="newIdeaBtn">Submit!</button>
-                </div>
-            </div>
-        </div>    
-        {{>footer}}        
+                <p id="description">{{description}}</p>  
+                <div id="listDisplay">
+                    <table id="ideaTable">
+                        <tr>
+                            <th class="slno">Sl.No</th>
+                            <th class="idea">Idea</th>
+                            <th class="cost">Cost</th>
+                            <th class="veto">Veto </th>                        
+                        </tr>
+                    </table>
+                    <div class="newIdeaForm">
+                        <input type="text" id="newIdea" placeholder="Type your new idea here!">                                            
+                        <input type="text" id="cost" placeholder="Estimated cost" >
+                        <button id="newIdeaBtn">Submit!</button>
+                    </div>            
+                </div>            
+                {{>footer}} 
+            </div>  
+        </div>                   
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/idea.js" ></script>
     </body>

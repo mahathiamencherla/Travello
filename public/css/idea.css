@@ -1,17 +1,16 @@
 body{
-    margin: 0px;
-    color: #232141;     
+    margin: 0px; 
+    color: #232141;
     font-family: 'Montserrat';  
-    font-weight: normal;   
-    background-image: -webkit-linear-gradient(left, #2A274D, #2A274D 17.05%, transparent 17.05%, transparent 100%);      
+    font-weight: normal;       
 }
 
 .Container{
     max-width: 100%;      
     background-size: 100%;
-    display: flex;    
-      
-    font-weight: normal;  
+    display: flex;          
+    font-weight: normal; 
+    min-height: 100vh; 
 }
 
 .sidebar{
@@ -43,8 +42,7 @@ body{
 .navigation{
     display: flex;
     flex-direction: column; 
-    flex-grow: 4;
-    
+    flex-grow: 4;    
 }
 
 .navigation button{
@@ -69,8 +67,7 @@ body{
     display: flex;
     flex-direction: column;  /* default is "row" ie left to right */
     background-color: white;
-    flex-grow: 7;
-    min-height: 95vh;
+    flex-grow: 7;    
 }
 
 .main h1{
@@ -89,6 +86,10 @@ body{
     padding: 20px 16px;
     font-size: 25px;
     font-family: 'Montserrat'; 
+}
+
+#listDisplay{
+    min-height: 67vh;
 }
 
 table {
@@ -208,8 +209,7 @@ tr:nth-child(odd) button:hover{
 
 footer {
     text-align: right;
-    padding: 0 0 0 53%;     
-    /* border-top: 1px solid white;         */    
+    margin: 20px 40px ;         
 }
 
 footer a {

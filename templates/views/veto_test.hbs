@@ -12,8 +12,7 @@
             <div class="sidebar">
                 <div class="info">
                     <p>Destination: {{destination}}</p>  
-                    <p>Number of People: {{grpNo}}</p>              
-                    
+                    <p>Number of People: {{grpNo}}</p>                             
                 </div>
                 <div class="navigation">
                     <button id="idea_btn" >Idea List</button>
@@ -23,16 +22,18 @@
             </div>
             <div class="main">
                 <h1>{{title}}</h1>   
-                <p id="description">{{description}}</p>               
-                <table id="vetoTable">
-                    <tr>
-                        <th class="slno">Sl.No</th>
-                        <th class="veto">Veto</th>
-                    </tr>                    
-                </table>               
+                <p id="description">{{description}}</p> 
+                <div id="listDisplay">             
+                    <table id="vetoTable">
+                        <tr>
+                            <th class="slno">Sl.No</th>
+                            <th class="veto">Veto</th>
+                        </tr>                    
+                    </table>
+                </div>                
+                {{>footer}}
             </div>
-        </div>    
-        {{>footer}}
+        </div>          
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/veto.js" ></script>
     </body>
