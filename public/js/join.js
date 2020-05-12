@@ -3,6 +3,16 @@ const destination = document.querySelector("#dest")
 const pwd = document.querySelector("#pwd")
 const msg  = document.querySelector("#errorMessage")
 
+function myFunction() {
+  var x = document.getElementById("pwd");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  } 
+}
+
+
 document.getElementById("sub_but").addEventListener("click", (e) => { 
     e.preventDefault()      
     axios({
