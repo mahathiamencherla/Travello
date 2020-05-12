@@ -2,7 +2,8 @@ body{
     margin: 0px; 
     color: #232141;
     font-family: 'Montserrat';  
-    font-weight: normal;       
+    font-weight: normal;   
+    background-size: 200% 100% !important;    
 }
 
 .Container{

@@ -5,7 +5,8 @@ body {
     padding: 0 16px; 
     text-align: center;
     font-family: 'Montserrat';
-    color: #2A274D
+    color: #2A274D;
+    background-size: 200% 100% !important;
 }
 
 #share{
