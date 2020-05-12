@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
 require('./db/mongoose')
+
 const plannerRouter = require('./routers/planner')
 const listRouter = require('./routers/list')
 
@@ -18,6 +19,8 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.use(express.static(pubdir))
+
+
 
 const port = process.env.PORT || 3001
 
