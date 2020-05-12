@@ -57,7 +57,8 @@ button{
     background-color: white; 
     border-color: #232141;
     border: none;
-    color: black
+    color: black;
+    outline: none
 }
 
 button:hover {

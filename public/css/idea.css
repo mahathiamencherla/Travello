@@ -236,3 +236,7 @@ input[type=text], select {
 ::placeholder {
   color: black;
 }
+
+button{
+    outline: none
+  }

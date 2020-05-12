@@ -8,6 +8,58 @@ body {
     color: #2A274D
 }
 
+#share{
+  position: absolute;
+  left: 90%;
+  top: 5%;
+}
+
+.tooltip{
+  position: relative;  
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #666363;
+  color: whitesmoke;
+  text-align: center;  
+  border-radius: 6px; 
+  left: -20%;
+  bottom: -20%;
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.5s;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #666363 transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#share_btn{
+  background-color: #1875e9;
+  border: none;
+  border-radius: 7px;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  color: white;
+  font-size: large;  
+}
+
 h1 {
     font-size: 50px;
     margin-bottom: 16px;
@@ -83,3 +135,69 @@ a:hover {
     background-color: #d76c7f;
     font-size: x-large;
   }
+
+button{
+  outline: none;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */  
+  background-color: #000000; /* Fallback color */
+  background-color: #00000066; /* Black w/ opacity */
+  
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin-left: 63%;
+  margin-right: 30%;
+  padding: 20px;
+  border: 1px solid #9c9999;
+  width: 30%;
+  border-radius: 5px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn{  
+  margin: auto 0px;  
+  width: 40px;
+  height: 42px; 
+  padding: auto auto;
+  background-color: transparent; 
+  border: none;
+}
+
+.btn img{
+  padding-top: 5px;
+  width: 20px;  
+} 
+
+#url{
+  width: 80%;
+  height: 35px;
+  font-size: large;
+  margin: auto auto;
+  border-radius: 5px;
+}

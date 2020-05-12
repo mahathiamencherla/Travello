@@ -86,6 +86,7 @@ const displayRow = function(idea){
         var btn = document.createElement('button')
         var bText = document.createTextNode('veto')
         btn.appendChild(bText)
+        btn.title = "Click to veto idea"
 
         cell2.innerText = description
         cell3.innerText = cost
