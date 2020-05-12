@@ -61,7 +61,7 @@ body {
 
 footer a {
   text-decoration: none;
-  background-color: #d76c7f;
+  background-color: #f6fafb;
   color: #2A274D;
   border-radius: 5px;
 }
@@ -88,6 +88,17 @@ input[type=text], select {
     font-family: 'Montserrat';
   }
   
+  input[type=password], select {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;    
+    
+  }
+
   button {
     width: 100%;
     background-color: #d76c7f;
@@ -112,4 +123,9 @@ input[type=text], select {
 
  #home {
     color: #2A274D
+  }
+
+  footer a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
   }

@@ -24,10 +24,15 @@ footer{
 
 a {
     text-decoration: none;
-    background-color: #d76c7f;
+    background-color: #f6fafb;
     color: #2A274D;
     border-radius: 5px;
 }
+
+a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
+  }
 
 h1 {
     font-size: 64px;

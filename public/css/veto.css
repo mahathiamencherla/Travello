@@ -2,15 +2,14 @@ body{
     margin: 0px;
     color: #232141;     
     font-family: 'Montserrat';  
-    font-weight: normal;       
-    background-image: -webkit-linear-gradient(left, #2A274D, #2A274D 17.05%, transparent 17.05%, transparent 100%);      
+    font-weight: normal;           
 }
 
 .Container{
     max-width: 100%;      
     background-size: 100%;
     display: flex;    
-    min-height: 95vh;  
+    min-height: 100vh;  
     font-weight: normal;  
 }
 
@@ -18,7 +17,7 @@ body{
     display: flex;
     flex-direction: column;  
     background-color: #2A274D;
-    flex-grow: 1.07;
+    flex-grow: 1.14;
 }
 
 .info{
@@ -43,11 +42,8 @@ body{
 .navigation{
     display: flex;
     flex-direction: column; 
-    flex-grow: 4;
-    
+    flex-grow: 4;    
 }
-
-
 
 button{
     width: 80%;
@@ -93,11 +89,15 @@ button:hover {
     font-family: 'Montserrat'; 
 }
 
+#listDisplay{
+    min-height: 67vh;
+}
+
 table {
     counter-reset: Serial;
     font-family: 'Montserrat';
     border-collapse: collapse;
-    width: 90%;
+    width: 90%;  /* 90.49% for equal calculated width*/
     margin: 0 auto;
 }
 
@@ -141,14 +141,17 @@ width: 80%;
 
 footer {
     text-align: right;
-    padding: 0 0 0 53%;   
-    /* border-top: 1px solid white;             */
+    margin: 20px 40px ;       
 }
 
 footer a {
     text-decoration: none;
-    background-color: #d76c7f;
+    background-color: #f6fafb;
     color: #2A274D;
     border-radius: 5px;
   }
 
+a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
+  }
