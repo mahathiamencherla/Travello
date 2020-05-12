@@ -24,7 +24,9 @@ a {
     border-radius: 5px;
 }
 
-
+a:hover {        
+    font-size: xx-large;
+  }
 
 footer {
     text-align: center;

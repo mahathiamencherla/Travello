@@ -219,6 +219,11 @@ footer a {
     border-radius: 5px;
   }
 
+a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
+  }
+
 input[type=text], select {
   font-family: 'Montserrat';
   padding-left: 3px;

@@ -29,6 +29,11 @@ a {
     border-radius: 5px;
 }
 
+a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
+  }
+
 h1 {
     font-size: 64px;
     margin-bottom: 16px;

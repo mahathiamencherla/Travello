@@ -78,3 +78,8 @@ footer a {
 #logout:hover {
     background-color: #d6d0d0;
   }
+
+a:hover {    
+    background-color: #d76c7f;
+    font-size: x-large;
+  }
