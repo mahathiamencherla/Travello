@@ -50,7 +50,7 @@ body {
 }
 
 #share_btn{
-  background-color: #1875e9;
+  background-color: #d76c7f;
   border: none;
   border-radius: 7px;
   height: 40px;
@@ -156,7 +156,7 @@ button{
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background-color: #ebebeb; 
   margin-left: 63%;
   margin-right: 30%;
   padding: 20px;
