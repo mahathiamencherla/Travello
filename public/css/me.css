@@ -8,6 +8,23 @@ body {
     color: #2A274D
 }
 
+#share{
+  position: absolute;
+  left: 90%;
+  top: 5%;
+}
+
+#share_btn{
+  background-color: #1875e9;
+  border: none;
+  border-radius: 7px;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  color: white;
+  font-size: large;  
+}
+
 h1 {
     font-size: 50px;
     margin-bottom: 16px;
