@@ -2,6 +2,7 @@ const sub_btn = document.querySelector("#newIdeaBtn")
 const idea_btn = document.querySelector("#idea_btn")
 const veto_btn = document.querySelector("#veto_btn")
 const logout = document.querySelector("#logout")
+const profile = document.querySelector("#profile")
 const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
 const time = document.querySelector("#time")
@@ -68,6 +69,10 @@ logout.addEventListener("click", (e) => {
     
 })
 
+profile.addEventListener("click", (e) => {    
+    e.preventDefault()
+    window.location.href = `/me/${token}`
+})
 
 const diplayList = function(list){
     list.forEach((idea) => {

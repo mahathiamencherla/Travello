@@ -1,5 +1,6 @@
 const table = document.querySelector("#vetoTable")
 const logout = document.querySelector("#logout")
+const profile = document.querySelector("#profile")
 const pathname = window.location.pathname;
 const token = pathname.replace("/veto/","")
 
@@ -17,7 +18,6 @@ idea_btn.addEventListener("click", (e) => {
 })
 
 veto_btn.addEventListener("click", (e) => {
-    console.log("clicked")
     e.preventDefault()
     window.location.href = `/veto/${token}`
 })
@@ -36,6 +36,11 @@ logout.addEventListener("click", (e) => {
         }
     })
     
+})
+
+profile.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.href = `/me/${token}`
 })
 
 const diplayList = function(list){
