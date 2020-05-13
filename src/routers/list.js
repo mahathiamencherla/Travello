@@ -69,4 +69,17 @@ router.get('/veto/:token', auth, async(req, res) => {
     })
 
 })
+
+router.patch('/veto/:token',auth, async(req,res) => {    
+    try{
+        const list = await List.findOneAndUpdate({ _id: req.body.veto, owner: req.planner._id},{ $inc: {vetoCount:1}},{ new: true, runValidators: true})
+        if(!list){
+            res.sendStatus(404)
+        }
+        res.send({list,grpno:req.planner.peopleCount})
+    }catch(e){
+        res.sendStatus(500)
+    }
+})
+
 module.exports = router

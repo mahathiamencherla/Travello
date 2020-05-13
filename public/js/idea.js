@@ -89,12 +89,30 @@ const displayRow = function(idea){
         var cell5 = row.insertCell(4)
 
         var btn = document.createElement('button')
-        var bText = document.createTextNode('veto')
-        btn.appendChild(bText)
-        btn.title = "Click to veto idea"
-
+        var bText = document.createTextNode('veto')        
+        btn.setAttribute('title','Click to veto idea')
+        btn.setAttribute('id',idea._id)        
+        btn.appendChild(bText)        
+        btn.setAttribute('onclick','updateVetoCount(this.id)')
         cell2.innerText = description
         cell3.innerText = duration
         cell4.innerText = cost
         cell5.appendChild(btn)
+}
+
+function updateVetoCount(id){
+    axios({
+        method: 'patch',
+        url: `/veto/${token}`,
+        data:{
+            veto:id
+        }
+    }).then((result) => {
+        const vetoCount = result.data.list.vetoCount
+        const vetoLimit = Math.ceil(result.data.grpno/2)
+        if (vetoCount >= vetoLimit ){
+            window.alert("This idea has been vetoed")
+            location.reload()            
+        }       
+    })    
 }
