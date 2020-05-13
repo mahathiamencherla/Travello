@@ -37,8 +37,7 @@ sub_btn.addEventListener("click", (e) => {
           newIdea.value = ""
           cost.value = ""
           time.value = ""
-          idea = result.data
-          console.log(idea)
+          idea = result.data          
           displayRow(idea)          
       })
 })
@@ -109,8 +108,8 @@ function updateVetoCount(id){
         }
     }).then((result) => {
         const vetoCount = result.data.list.vetoCount
-        const vetoLimit = Math.ceil(result.data.grpno/2)
-        if (vetoCount >= vetoLimit ){
+        const vetoLimit = (result.data.grpno%2) == 0?(result.data.grpno/2)+1: Math.ceil(result.data.grpno/2)        
+        if (vetoCount === vetoLimit ){
             window.alert("This idea has been vetoed")
             location.reload()            
         }       

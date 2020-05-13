@@ -35,9 +35,9 @@ router.get('/idea/:token', auth, async(req, res) => {
 
 
 router.get('/idea/data/:token', auth, async (req, res) => { //get data
-    const major = Math.ceil(req.planner.peopleCount/2)
+    const major = Math.floor(req.planner.peopleCount/2)
     try{
-        const list = await List.find({ vetoCount: {$lt: major}, owner: req.planner._id})
+        const list = await List.find({ vetoCount: {$lte: major}, owner: req.planner._id})
         if(!list){
             res.sendStatus(404)
         }
@@ -48,7 +48,7 @@ router.get('/idea/data/:token', auth, async (req, res) => { //get data
 })
 
 router.get('/veto/data/:token', auth, async (req, res) => {
-    const major = Math.ceil(req.planner.peopleCount/2)
+    const major = Math.floor(req.planner.peopleCount/2)
     try{
         const list = await List.find({ vetoCount: {$gt: major}, owner: req.planner._id})
         if(!list){
