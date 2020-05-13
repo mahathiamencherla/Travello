@@ -15,6 +15,10 @@ const listSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    duration: {
+        type:Number,
+        default: 0
+    },
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
