@@ -4,6 +4,7 @@ const veto_btn = document.querySelector("#veto_btn")
 const logout = document.querySelector("#logout")
 const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
+const time = document.querySelector("#time")
 const table = document.querySelector("#ideaTable")
 
 const pathname = window.location.pathname;
@@ -22,7 +23,7 @@ sub_btn.addEventListener("click", (e) => {
     e.preventDefault()
     inputIdea = newIdea.value    
     inputCost = !cost.value ? 0 : cost.value 
-    
+    inputTime = !time.value ? 0 : time.value 
 
     axios({
         method: 'post',
@@ -34,6 +35,7 @@ sub_btn.addEventListener("click", (e) => {
       }).then((result) => {
           newIdea.value = ""
           cost.value = ""
+          time.value = ""
           idea = result.data
           console.log(idea)
           displayRow(idea)          
@@ -76,12 +78,14 @@ const diplayList = function(list){
 const displayRow = function(idea){
         var description = idea.description        
         var cost = idea.cost
+        var duration = idea.duration
 
         var row = table.insertRow(-1)
         var cell1 = row.insertCell(0)
         var cell2 = row.insertCell(1)
         var cell3 = row.insertCell(2)
         var cell4 = row.insertCell(3)        
+        var cell5 = row.insertCell(4)
 
         var btn = document.createElement('button')
         var bText = document.createTextNode('veto')
@@ -89,6 +93,7 @@ const displayRow = function(idea){
         btn.title = "Click to veto idea"
 
         cell2.innerText = description
-        cell3.innerText = cost
-        cell4.appendChild(btn)
+        cell3.innerText = duration
+        cell4.innerText = cost
+        cell5.appendChild(btn)
 }
