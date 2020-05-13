@@ -141,12 +141,19 @@ th.idea{
 text-align: center;
 font-weight: bolder;
 width: 65%;
-}  
+}
+
+th.time{    
+    text-align: center;
+    font-weight: bolder;
+    width: 5%;
+    align-content: center;
+}
 
 th.cost{
 text-align: center;
 font-weight: bolder;
-width: 10%;
+width: 5%;
 }
 
 th.veto{    
@@ -180,19 +187,28 @@ tr:nth-child(odd) button:hover{
     margin: 20px auto;
     display: flex;
     width: 90%;
-     
+    height: 37px; 
     font-family: 'Montserrat';
 }
 
 #newIdea{
-    width: 82%;  
+    width: 85%;  
     height: 30px;  
-    color: black
+    color: black ;
+    height: 36px;    
+    margin-right: 1px;
 }
 
 #cost{
-    width: 11.5%;
-    color: black
+    width: 6%;
+    color: black;
+    margin-right: 1px;
+}
+
+#time{
+    width: 7%;      
+    color: black;
+    margin-right: 1px;
 }
 
 #newIdeaBtn{
