@@ -30,7 +30,8 @@ sub_btn.addEventListener("click", (e) => {
         url: `/idea/${token}`,
         data: {
           description: inputIdea,
-          cost: inputCost
+          cost: inputCost,
+          duration: inputTime
         }
       }).then((result) => {
           newIdea.value = ""
