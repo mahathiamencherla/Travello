@@ -13,6 +13,7 @@ body {
   position: absolute;
   left: 90%;
   top: 5%;
+  font-family: 'Montserrat';
 }
 
 .tooltip{
@@ -32,6 +33,7 @@ body {
   z-index: 1;
   opacity: 0;
   transition: opacity 1.5s;
+  font-family: 'Montserrat';
 }
 
 .tooltip .tooltiptext::after {
@@ -43,11 +45,13 @@ body {
   border-width: 5px;
   border-style: solid;
   border-color: transparent transparent #666363 transparent;
+  font-family: 'Montserrat';
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+  font-family: 'Montserrat';
 }
 
 #share_btn{
@@ -58,7 +62,8 @@ body {
   width: 100px;
   text-align: center;
   color: white;
-  font-size: large;  
+  font-size: large;
+  font-family: 'Montserrat';
 }
 
 h1 {
@@ -208,4 +213,61 @@ button{
   color: #4C488C;
   outline: none;
   border: none;
+}
+
+#change_email {
+  border-radius: 5px;
+    font-weight: normal;
+    text-align: center;
+    font-family: 'Montserrat'; 
+    background-color: #ebebeb; 
+    border: none;
+    color: black
+}
+
+#change_email:hover {
+  background-color: #d6d0d0;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 220px;
+  right: 325px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+.form-container input[type=text] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-family: 'Montserrat';
+}
+.form-container .btn {
+  background-color: #d76c7f;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  font-family: 'Montserrat';
+}
+
+.form-container .cancel {
+  background-color: #4C488C;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }

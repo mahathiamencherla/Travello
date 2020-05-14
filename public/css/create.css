@@ -15,7 +15,7 @@ body {
 #cent {
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.502)); 
     box-sizing: content-box;
-    width: 500px;
+    width: 400px;
     height: 400px;
     padding: 30px;
     margin: 50px 38px;
@@ -27,7 +27,7 @@ body {
     border-radius: 25px;
     position: absolute;
 	overflow: visible;
-
+  left: 80px;
     text-align: center;
     
   }
@@ -35,7 +35,7 @@ body {
   #insideCent {
      
     box-sizing: content-box;
-    width: 450px;
+    width: 350px;
     height: 350px;
     padding: 30px;  
     border: 5px solid #4C488C;
@@ -70,7 +70,7 @@ footer a {
 form {
     border-radius: 5px;
     background-color: #4C488C;
-    width: 450px;
+    width: 350px;
     height: 350px;
     text-align: center;
     font-family: 'Montserrat';
@@ -97,7 +97,18 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;    
-    
+    font-family: 'Montserrat';
+  }
+
+  input[type=email], select {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;    
+    font-family: 'Montserrat';
   }
 
   button {
@@ -109,7 +120,7 @@ input[type=text], select {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
   }
 
    button:hover {
@@ -130,3 +141,7 @@ input[type=text], select {
     background-color: #d76c7f;
     font-size: x-large;
   }
+
+.label-pwd {
+  font-size: 10pt;
+}  
