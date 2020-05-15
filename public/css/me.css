@@ -65,7 +65,8 @@ body{
   font-family: 'Montserrat'; 
   background-color: white; 
   border: none;
-  color: black
+  color: black;
+  cursor: pointer;
 }
 
 .navigation button:hover {
@@ -139,6 +140,7 @@ h1 {
     font-family: 'Montserrat'; 
     background-color: #ebebeb; 
     color:  #d76c7f;
+    cursor: pointer;
 }
 
 #idea:hover {
@@ -174,6 +176,7 @@ a:hover {
 
 button{
   outline: none;
+  cursor: pointer;
 }
 
 .modal {
@@ -223,6 +226,7 @@ button{
   padding: auto auto;
   background-color: transparent; 
   border: none;
+  cursor: pointer;
 }
 
 .btn img{

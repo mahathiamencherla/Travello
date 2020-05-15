@@ -60,11 +60,11 @@ router.post('/logout/:token', auth, async (req, res) => {
 router.get('/profile/:token', auth, async (req, res) => {
     const planner = req.planner
     res.render('profile', {
-        title: 'Welcome to your planner!',
+        title: 'Edit your planner profile!',
         description: 'Choose what you want to do',
-        dest: "Destination: " + planner.destination,
-        grpNo: "Number of people: "  + planner.peopleCount,
-        email: "Admin email: " +planner.email
+        dest: planner.destination,
+        grpNo: planner.peopleCount,
+        email: planner.email
     })
 })
 

@@ -6,13 +6,14 @@
         <link rel="icon" href="/img/travelloicon.png">
         <link rel="stylesheet" href="/css/profile.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <div class="Container">
             <div class="sidebar">
                 <div class="info">
-                    <p>{{dest}}</p>  
-                    <p>{{grpNo}}</p>         
+                    <p>Destination: {{dest}}</p>  
+                    <p>Number of people: {{grpNo}}</p>         
                 </div>
                 <div class="navigation">
                     <button id="idea_btn" >Idea List</button>
@@ -22,14 +23,36 @@
                 </div>
             </div>
             <div class="main">
-                <h1>Edit your profile!</h1>  
+                <h1>{{title}}</h1>  
                 <form class="form-profile">
-                    <input type="text" placeholder="Destination"><br>
-                    <input type="text" placeholder="Number of people"><br>
-                    <input type="email" placeholder="Email"><br>
-                    <button>Submit!</button>
+                    <p>Destination: {{dest}}<button class="btn" onclick="openForm()"><i class="fa fa-edit"></i></button></p>
+                    <p>Number of people: {{grpNo}}<button class="btn"><i class="fa fa-edit"></i></button></p>
+                    <p>Email: {{email}}<button class="btn"><i class="fa fa-edit"></i></button></p>
+                    <button class="all" onclick="openForm()">Edit all</button>
                 </form>
+                 <div class="form-popup" id="myForm">
+                <form  class="form-container">
+                    <p>Change email!</p>
+                    <input type="text" id="email_change" placeholder="Enter email" name="email" required>
+                    <button type="submit" id="change_button" class="change_btn">Change</button>
+                    <button type="button" class="btn_cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+            </div>
+            <div>
             </div>
             </div>    
     </body>
+    <script>
+        function openForm() {
+        document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+        }
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src= "/js/profile.js" > </script>
 </html>
