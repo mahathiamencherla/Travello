@@ -10,7 +10,7 @@ body{
   max-width: 100%;      
   background-size: 100%;
   display: flex; 
-  min-height: 100vh;   
+  min-height: 100vh; 
  }
  
  .main-content{
@@ -26,6 +26,8 @@ body{
   display: flex;
   flex-direction: column; 
   flex-grow: 1.4; 
+
+  z-index: 1;
 }
 
 .info{
@@ -70,15 +72,10 @@ body{
 background-color: #edebeb;
 }
 
-#share{
-  position: absolute;
-  left: 90%;
-  top: 5%;
-  font-family: 'Montserrat';
-}
 
 .tooltip{
   position: relative;  
+  left:35px;
 }
 
 .tooltip .tooltiptext {
@@ -87,8 +84,8 @@ background-color: #edebeb;
   background-color: #666363;
   color: whitesmoke;
   text-align: center;  
-  border-radius: 6px; 
-  left: -20%;
+  border-radius: 7px; 
+  left: 20%;
   bottom: -20%;
   position: absolute;
   z-index: 1;
@@ -112,18 +109,6 @@ background-color: #edebeb;
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  font-family: 'Montserrat';
-}
-
-#share_btn{
-  background-color: #4C488C;
-  border: none;
-  border-radius: 7px;
-  height: 40px;
-  width: 100px;
-  text-align: center;
-  color: white;
-  font-size: large;
   font-family: 'Montserrat';
 }
 
@@ -164,10 +149,6 @@ h1 {
     background-color: #2A274D;
   }  
 
-#share_btn:hover {
-    background-color: #2A274D;
-  }
-
 footer {
     margin-top: 100px;
     text-align: right;
@@ -177,30 +158,13 @@ footer {
 }
 
 footer a {
+
     text-decoration: none;
     background-color: #f6fafb;
     color: #2A274D;
-    border-radius: 5px;    
+    border-radius: 5px; 
   }
 
-#logout {
-    width: 20%;
-    height: 50px;               
-    border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 50px;
-    font-weight: normal;
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Montserrat'; 
-    background-color: #ebebeb; 
-    border: none;
-    color: black
-}
-
-#logout:hover {
-    background-color: #d6d0d0;
-  }
 
 a:hover {    
     background-color: #d76c7f;
@@ -214,9 +178,9 @@ button{
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   padding-top: 100px; /* Location of the box */
-  left: 0;
+  left: 100px;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */  

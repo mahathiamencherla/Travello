@@ -16,36 +16,32 @@
                 </div>
                 <div class="navigation">                    
                     <button id="profile">Profile</button>
-                    <button id="logout">Logout</button>
-            </div>
-        </div>
-        <div class="main-content">
-            <h1>{{title}}</h1>      
-            <div id="share">                
+                    <button id="logout">Logout</button>          
                 <div class="tooltip">
-                    <button id="share_btn" class="Sbtn">Share</button><br><br>
+                    <button class="Sbtn"  onclick="openForm()">Share</button><br><br>
                     <span class="tooltiptext">Get shareable link</span>
                 </div>
-            </div>   
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
+            <div  class="form-popup" id="myForm">
+                <div class="form-container">
                     <span class="close">&times;</span>
                     <input id="url">                      
                     <button class="btn" data-clipboard-target="#url">
                         <img src="/img/clippy.svg">
                     </button>
                 </div>
-            </div>             
-            <div class = "buttoncase">
+            </div>   
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>{{title}}</h1>                
+            <div>
                 <div class="description"><p >{{description}}</p></div>
                 <button id = "idea">IDEA LIST</button>
                 <button id="veto" >VETO LIST</button>                
             </div>        
             <p>{{dest}}</p>
             <p>{{grpNo}}</p>
-            <p>{{email}} <button id="change_email" onclick="openForm()">Change?</button></p>
+            <p>{{email}}<button id="change_email" onclick="openForm()">Change?</button></p>
             <div class="form-popup" id="myForm">
             <form  class="form-container">
                 <p>Change email!</p>
@@ -54,7 +50,6 @@
                 <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
             </form>
             </div>
-            <button id="logout">Logout</button>
             {{>footer}}
         </div>        
         </div>
