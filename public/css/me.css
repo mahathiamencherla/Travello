@@ -129,15 +129,15 @@ h1 {
 
 #idea, #veto {
     width: 300px;
-    height: 200px;   
+    height: 100px;   
     margin: 50px 42px; 
     padding: 32px 16px;    
-    border-radius: 50px;
+    border-radius: 10px;
     border: none;
-    font-weight: bolder;
-    font-size: xx-large;
+    font-weight: bold;
+    font-size: x-large;
     font-family: 'Montserrat'; 
-    background-color: #4C488C; 
+    background-color: #ebebeb; 
     color:  #d76c7f;
 }
 
@@ -150,11 +150,12 @@ h1 {
   }  
 
 footer {
-    margin-top: 100px;
+    margin-top: 450px;
     text-align: right;
     color: #2A274D;
     border-top: 1px solid #2A274D;    
     padding: 16px 32px 0px 0px ;
+
 }
 
 footer a {

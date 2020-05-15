@@ -1,0 +1,133 @@
+body{
+    margin: 0px; 
+    color: #232141;
+    font-family: 'Montserrat';  
+    font-weight: normal;   
+    background-size: 200% 100% !important;    
+}
+
+.Container{
+    max-width: 100%;      
+    background-size: 100%;
+    display: flex;          
+    font-weight: normal; 
+    min-height: 100vh; 
+}
+
+.sidebar{
+    display: flex;
+    flex-direction: column;  
+    background-color: #2A274D;
+    flex-grow: 1.33;
+    
+}
+
+.info{
+    display: flex; 
+    flex-direction: column;   
+    flex-grow: 0.2;    
+    background-color: #2A274D;
+    justify-content: safe;
+    border-bottom: 1px solid white;
+}
+
+.info p{  
+    margin-top: 30px;     
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.navigation{
+    display: flex;
+    flex-direction: column; 
+    flex-grow: 4;    
+}
+
+.navigation button{
+    width: 80%;
+    height: 50px;               
+    border-radius: 7px;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-weight: normal;
+    font-size: 20px;
+    font-family: 'Montserrat'; 
+    background-color: white; 
+    border: none;
+    color: black
+}
+
+.navigation button:hover {
+  background-color: #edebeb;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;  /* default is "row" ie left to right */
+    background-color: white;
+    flex-grow: 7;    
+}
+
+.main h1{
+    text-align: center;
+    margin-top: 70px;
+    margin: 0 auto;
+    padding: 40px 16px;
+    font-size: 35px;
+    font-family: 'Montserrat'; 
+    border-bottom: 1px solid #d76c7f; 
+}
+
+.form-profile {
+    margin: 50px auto;
+   
+        border-radius: 10px;
+        background-color: #d76c7f;
+        width: 400px;
+        height: 220px;
+        padding: 10px 10px;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-size: 12pt;
+      
+}
+
+input[type=text], select {
+    width: 90%;
+    padding: 8px 20px;
+    margin: 10px 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+  }
+
+  input[type=email], select {
+    width: 90%;
+    padding: 8px 20px;
+    margin: 10px 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;    
+    font-family: 'Montserrat';
+  }
+
+  button {
+    width: 90%;
+    background-color: #ebebeb;
+    padding: 8px 20px;
+    margin: 10px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+  }
+
+   button:hover {
+    background-color: #ba4747;
+  }

@@ -37,7 +37,7 @@ router.get('/me/:token', auth, async (req, res) => {
     res.render('me', {
         title: 'Welcome to your planner!',
         description: 'Choose what you want to do',
-        dest: "Your destination: " + planner.destination,
+        dest: "Destination: " + planner.destination,
         grpNo: "Number of people: "  + planner.peopleCount,
         email: "Admin email: " +planner.email
     })
@@ -55,6 +55,17 @@ router.post('/logout/:token', auth, async (req, res) => {
     } catch (error) {
         res.json({success: false})
     }
+})
+
+router.get('/profile/:token', auth, async (req, res) => {
+    const planner = req.planner
+    res.render('profile', {
+        title: 'Welcome to your planner!',
+        description: 'Choose what you want to do',
+        dest: "Destination: " + planner.destination,
+        grpNo: "Number of people: "  + planner.peopleCount,
+        email: "Admin email: " +planner.email
+    })
 })
 
 router.patch('/me/:token', auth, async (req, res) => {

@@ -11,11 +11,11 @@
         <div class="Container">
         <div id="sidebar">
             <div class="info">
-                    <p>Destination:AUSTRALIA</p>  
-                    <p>Number of People:</p>         
+                    <p>{{dest}}</p>  
+                    <p>{{grpNo}}</p>         
                 </div>
                 <div class="navigation">                    
-                    <button id="profile">Profile</button>
+                    <button id="profile">Edit profile</button>
                     <button id="logout">Logout</button>          
                 <div class="tooltip">
                     <button class="Sbtn"  onclick="openForm()">Share</button><br><br>
@@ -39,8 +39,6 @@
                 <button id = "idea">IDEA LIST</button>
                 <button id="veto" >VETO LIST</button>                
             </div>        
-            <p>{{dest}}</p>
-            <p>{{grpNo}}</p>
             <p>{{email}}<button id="change_email" onclick="openForm()">Change?</button></p>
             <div class="form-popup" id="myForm">
             <form  class="form-container">

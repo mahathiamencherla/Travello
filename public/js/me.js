@@ -3,6 +3,7 @@ const token = pathname.replace("/me/","")
 const logout = document.querySelector("#logout")
 const idea_btn = document.querySelector("#idea")
 const veto_btn = document.querySelector("#veto")
+const profile = document.querySelector("#profile")
 const modal = document.querySelector("#myModal")
 const share_btn = document.querySelector("#share_btn")
 const close = document.querySelector(".close")
@@ -22,6 +23,11 @@ idea_btn.addEventListener("click", (e) => {
 veto_btn.addEventListener("click", (e) => {    
     e.preventDefault()    
     window.location.href = `/veto/${token}`    
+})
+
+profile.addEventListener("click", (e) => {    
+    e.preventDefault()    
+    window.location.href = `/profile/${token}`    
 })
 
 logout.addEventListener("click", (e) => {  
