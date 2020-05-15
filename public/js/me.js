@@ -7,6 +7,8 @@ const modal = document.querySelector("#myModal")
 const share_btn = document.querySelector("#share_btn")
 const close = document.querySelector(".close")
 const url = document.querySelector("#url")
+const change_button = document.querySelector("#change_button")
+const email_change = document.querySelector("#email_change")
 
 url.value = window.location.href
 
@@ -54,3 +56,18 @@ window.onclick = function(event) {   //If user clicks anywhere outside of the mo
     }
   }
 
+change_button.addEventListener("click", (e) => {
+    e.preventDefault()
+    axios({
+        method: 'patch',
+        url: `/me/${token}`,
+        data: {
+            email: email_change.value
+        }
+    }).then((result) => {
+        window.location.href = `/me/${token}`
+        document.getElementById("myForm").style.display = "none";
+    }).catch((e) => {
+        window.alert('Can\'t update! Try again..')
+    })
+})

@@ -38,7 +38,8 @@ router.get('/me/:token', auth, async (req, res) => {
         title: 'Welcome to your planner!',
         description: 'Choose what you want to do',
         dest: "Your destination: " + planner.destination,
-        grpNo: "Number of people: "  + planner.peopleCount
+        grpNo: "Number of people: "  + planner.peopleCount,
+        email: "Admin email: " +planner.email
     })
 })
 
@@ -53,6 +54,19 @@ router.post('/logout/:token', auth, async (req, res) => {
         
     } catch (error) {
         res.json({success: false})
+    }
+})
+
+router.patch('/me/:token', auth, async (req, res) => {
+    try {
+        const planner = await Planner.findOneAndUpdate({_id: req.planner._id},{ $set: {email: req.body.email}},{ new: true, runValidators: true})
+        if(!planner){
+            res.sendStatus(404)
+        }
+        await req.planner.save()
+        res.send(planner)
+    } catch (error) {
+        res.sendStatus(500)
     }
 })
 

@@ -19,7 +19,18 @@ const plannerSchema = new mongoose.Schema({
             }
         },
         default: 1
-    },    
+    }, 
+    email: {
+        type: String,
+        required: true,
+        trim: true,
+        lowercase: true,
+        validate(value) {
+            if (!validator.isEmail(value)) {
+                throw new Error('invalid email')
+            }
+        }
+    },   
     password: {
         type: String,
         required: true,
