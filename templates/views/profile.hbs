@@ -24,35 +24,15 @@
             </div>
             <div class="main">
                 <h1>{{title}}</h1>  
-                <form class="form-profile">
-                    <p>Destination: {{dest}}<button class="btn" onclick="openForm()"><i class="fa fa-edit"></i></button></p>
-                    <p>Number of people: {{grpNo}}<button class="btn"><i class="fa fa-edit"></i></button></p>
-                    <p>Email: {{email}}<button class="btn"><i class="fa fa-edit"></i></button></p>
-                    <button class="all" onclick="openForm()">Edit all</button>
-                </form>
-                 <div class="form-popup" id="myForm">
-                <form  class="form-container">
-                    <p>Change email!</p>
-                    <input type="text" id="email_change" placeholder="Enter email" name="email" required>
-                    <button type="submit" id="change_button" class="change_btn">Change</button>
-                    <button type="button" class="btn_cancel" onclick="closeForm()">Close</button>
-                </form>
-            </div>
-            </div>
-            <div>
-            </div>
-            </div>    
-    </body>
-    <script>
-        function openForm() {
-        document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-        }
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
+                <div class="form-profile">
+                    <br>
+                    <div class="line"><label>Destination</label><input type="text" id="dst" value={{dest}} onkeypress="edit(this)" readonly><button class="btn" id="edit_dst" onclick="allowEdit(this)"><i  class="fa fa-edit"></i></button></div><br>
+                    <div class="line"><label>Number of people</label> <input type="text" id="grpno" value={{grpNo}} onkeypress="edit(this)" readonly><button class="btn" id="edit_grpno" onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>
+                    <div class="line"><label>Email</label><input type="text" id="email" value={{email}} onkeypress="edit(this)" readonly><button class="btn" id="edit_email"  onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>                          
+                </div>                            
+            </div>            
+        </div>    
+    </body>            
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/profile.js" > </script>
 </html>

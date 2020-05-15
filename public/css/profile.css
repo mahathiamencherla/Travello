@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-direction: column;  
     background-color: #2A274D;
-    flex-grow: 1.33;
+    flex-grow: 2.17;
     
 }
 
@@ -81,91 +81,47 @@ body{
     border-bottom: 1px solid #d76c7f; 
 }
 
-.form-profile {
-    margin: 50px;
-   
-        border-radius: 10px;
-        background-color: #d76c7f;
-        width: 600px;
-        height: 180px;
-        padding: 10px 10px;
-        text-align: center;
-        font-family: 'Montserrat';
-        font-size: 12pt;
-      
+.form-profile { 
+  padding-top: 100px;
+  margin:   10% auto 0px auto;   
+  border-radius: 10px;
+  background-color: #d76c7f;
+  width: 80%;  
+  padding: 10px 10px;        
+  font-family: 'Montserrat';
+  font-size: 40px;    
+  
 }
 
-.form-profile p {
-    text-align: left;
-    border-bottom: 1px solid black;
-    color: white
+.line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 92%;     
+}
+
+.line input{
+  min-width: 60%;
+  font-family: 'Montserrat';
+  font-size: 40px; 
+  margin-right: 5%;
+  border-radius: 8px;
+  border: none;
+}
+
+.line label{
+  min-width: 38%;
+  margin-left: 0.8%;
 }
 
 .btn {
-    border:none;
-    float: right;
-    border-radius: 5px;
-    background-color: white;
-    padding: 3px 4px;
-  font-size: 14px;
+  border:none;
+  float: right;
+  border-radius: 8px;
+  background-color: white;
+  padding: 3px 4px;
+  font-size: 40px;
   cursor: pointer;
+  height: 55px;
+  width: 58px;
 }
-
-  .all {
-    width: 90%;
-    background-color: #ebebeb;
-    padding: 8px 20px;
-    margin: 10px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Montserrat';
-    cursor: pointer;
-  }
-
-   .all:hover {
-    background-color: #ba4747;
-  }
-
-
-
-  .form-popup {
-    display: none;
-    position: fixed;
-    bottom: 607px;
-    right: 450px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  }
-  
-  .form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-  }
-  
-  .form-container input[type=text] {
-    width: 90%;
-    padding: 15px;
-    margin: 5px 0 15px 0;
-    border: none;
-    background: #f1f1f1;
-    font-family: 'Montserrat';
-  }
-  .form-container .change_btn, .btn_cancel {
-    background-color: #d76c7f;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 45%;
-    margin-bottom:10px;
-    opacity: 0.8;
-    font-family: 'Montserrat';
-  }
-  
-  .form-container .btn_cancel {
-    background-color: #4C488C;
-    float:right;
-  }
-  
