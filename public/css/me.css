@@ -1,13 +1,36 @@
-body {
-    background-color: white;
-    max-width: 1000px;   
-    margin: 0 auto;       
-    padding: 0 16px; 
-    text-align: center;
-    font-family: 'Montserrat';
-    color: #2A274D;
-    background-size: 200% 100% !important;
+body{
+  margin: 0px; 
+  color: #232141;
+  font-family: 'Montserrat';  
+  font-weight: normal;   
+  background-size: 200% 100% !important;    
+} 
+ 
+ .Container{
+  max-width: 100%;      
+  background-size: 100%;
+  display: flex; 
+  min-height: 100vh;   
+ }
+ 
+ .main-content{
+  background-color: white;
+  /* max-width: 1000px;   
+  margin: 0 auto;       
+  padding: 0 16px;  */
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #2A274D;
+  /* background-size: 200% 100% !important; */
+  flex-grow: 3;
 }
+
+#sidebar{
+  position: relative;
+  background-color: blueviolet;
+  flex-grow: 1; 
+}
+
 
 #share{
   position: absolute;
@@ -108,18 +131,18 @@ h1 {
   }
 
 footer {
+    
     text-align: right;
     color: #2A274D;
-    border-top: 1px solid #2A274D;
-    margin-top: 100px;
-    padding: 16px 0;
+    border-top: 1px solid #2A274D;    
+    padding: 16px 32px 0px 0px ;
 }
 
 footer a {
     text-decoration: none;
     background-color: #f6fafb;
     color: #2A274D;
-    border-radius: 5px;
+    border-radius: 5px;    
   }
 
 #logout {
@@ -270,4 +293,13 @@ button{
 
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+#sidebar{
+  position: relative;
+  left: auto;
+  min-width: 20%;
+  min-height: 100vh;
+  z-index: 1;
+  background-color: blueviolet;
 }
