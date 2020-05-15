@@ -129,15 +129,15 @@ h1 {
 
 #idea, #veto {
     width: 300px;
-    height: 200px;   
+    height: 100px;   
     margin: 50px 42px; 
     padding: 32px 16px;    
-    border-radius: 50px;
+    border-radius: 10px;
     border: none;
-    font-weight: bolder;
-    font-size: xx-large;
+    font-weight: bold;
+    font-size: x-large;
     font-family: 'Montserrat'; 
-    background-color: #4C488C; 
+    background-color: #ebebeb; 
     color:  #d76c7f;
 }
 
@@ -150,7 +150,7 @@ h1 {
   }  
 
 footer {
-    margin-top: 100px;
+    margin-top: 450px;
     text-align: right;
     color: #2A274D;
     border-top: 1px solid #2A274D;    
@@ -175,31 +175,6 @@ button{
   outline: none;
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 10; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 100px;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */  
-  background-color: #000000; /* Fallback color */
-  background-color: #00000066; /* Black w/ opacity */
-  
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #ebebeb;   
-  margin-left: 73%;
-  margin-right: 10%;
-  padding: 20px;
-  border: 1px solid #9c9999;
-  width: 23%;
-  border-radius: 8px;
-}
-
 /* The Close Button */
 .close {
   color: #aaaaaa;
@@ -215,7 +190,7 @@ button{
   cursor: pointer;
 }
 
-.btn{  
+.form-container1 .btn{  
   margin: auto 0px;  
   width: 40px;
   height: 42px; 
@@ -224,7 +199,7 @@ button{
   border: none;
 }
 
-.btn img{
+.form-container1 .btn img{
   padding-top: 5px;
   width: 20px;  
 } 
@@ -252,6 +227,21 @@ button{
 
 #change_email:hover {
   background-color: #d6d0d0;
+}
+
+.form-popup1 {
+  display: none;
+  position: fixed;
+  top: 490px;
+  left: 10px;
+  border: 3px solid #cccccc;
+  z-index: 9;  
+}
+
+.form-container1 {
+  min-width: 320px;  
+  padding: 10px;
+  background-color: white;
 }
 
 .form-popup {

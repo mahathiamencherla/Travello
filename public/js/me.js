@@ -4,7 +4,7 @@ const logout = document.querySelector("#logout")
 const idea_btn = document.querySelector("#idea")
 const veto_btn = document.querySelector("#veto")
 const modal = document.querySelector("#myModal")
-const share_btn = document.querySelector("#share_btn")
+const share_btn = document.querySelector(".Sbtn")
 const close = document.querySelector(".close")
 const url = document.querySelector("#url")
 const change_button = document.querySelector("#change_button")
@@ -42,17 +42,17 @@ logout.addEventListener("click", (e) => {
 
 share_btn.addEventListener("click", (e) => {
     e.preventDefault()
-    modal.style.display = "block";
+    myForm1.style.display = "block";
 })
 
 close.addEventListener("click", (e) => {
     e.preventDefault()
-    modal.style.display = "none";
+    myForm1.style.display = "none";
 })
  
 window.onclick = function(event) {   //If user clicks anywhere outside of the modal, close it
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == myForm1) {
+        myForm1.style.display = "none";
     }
   }
 
