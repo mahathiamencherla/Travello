@@ -18,16 +18,56 @@ body{
   text-align: center;
   font-family: 'Montserrat';
   color: #2A274D;  
-  flex-grow: 3;
+  flex-grow: 7  ;
 }
 
-#sidebar{
-  color: white;
-  position: relative;
+#sidebar{    
   background-color: #2A274D;
   display: flex;
   flex-direction: column; 
-  flex-grow: 1; 
+  flex-grow: 1.4; 
+}
+
+.info{
+  display: flex; 
+  flex-direction: column;   
+  flex-grow: 0.2;    
+  background-color: #2A274D;
+  justify-content: safe;
+  border-bottom: 1px solid white;
+}
+
+.info p{  
+  margin-top: 30px;     
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: column; 
+  flex-grow: 4;    
+}
+
+.navigation button{
+  width: 80%;
+  height: 50px;               
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: 'Montserrat'; 
+  background-color: white; 
+  border: none;
+  color: black
+}
+
+.navigation button:hover {
+background-color: #edebeb;
 }
 
 #share{
