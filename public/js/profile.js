@@ -1,13 +1,7 @@
 const idea_btn = document.querySelector("#idea_btn")
 const veto_btn = document.querySelector("#veto_btn")
-
-const destination = document.querySelector("#dst")
-const grpno = document.querySelector("#grpno")
-const email = document.querySelector("#email")
-
-const dst_btn = document.querySelector("edit_dst")
-const grpno_btn = document.querySelector("edit_grpno")
-const email_btn = document.querySelector("edit_email")
+const logout = document.querySelector("#logout")
+const profile = document.querySelector("#profile")
 
 const pathname = window.location.pathname;
 const token = pathname.replace("/profile/","")
@@ -22,12 +16,32 @@ veto_btn.addEventListener("click", (e) => {
     window.location.href = `/veto/${token}`
 })
 
+logout.addEventListener("click", (e) => {  
+    e.preventDefault()
+    axios({
+        method: 'post',
+        url: `/logout/${token}`
+    }).then((result) => {
+        console.log(result.data.success)
+        if(result.data.success === true) {
+            window.location.href = `/logout/success`  
+        } else {
+            window.location.href = `/logout/failure`
+        }
+    })
+    
+})
+
+profile.addEventListener("click", (e) => {    
+    e.preventDefault()
+    window.location.href = `/me/${token}`
+})
+
 function allowEdit(element){
-    const id = element.id.replace("edit_","")
-    console.log(id)
+    const id = element.id.replace("edit_","")    
     editBox = document.getElementById(id)
     editBox.readOnly = false
-    editBox.style.backgroundColor = "#a2f78d"
+    editBox.style.backgroundColor = "#ffffff"
 
 }
 
@@ -35,12 +49,10 @@ function edit(element){
     if(event.key === 'Enter'){
         const value = element.value    
         const id = element.id
+        console.log(value,id)
         editBox = document.getElementById(id)
         editBox.readOnly = true
-        editBox.style.backgroundColor = "#ffffff"
-        console.log(id,value)
-        //run one if loop to edit the corresponding values
+        editBox.style.backgroundColor = "#d76c7f"        
+        //axios patch
     }    
 }
-
-

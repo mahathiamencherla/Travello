@@ -107,6 +107,8 @@ body{
   margin-right: 5%;
   border-radius: 8px;
   border: none;
+  outline: none;
+  background-color: #d76c7f;
 }
 
 .line label{
