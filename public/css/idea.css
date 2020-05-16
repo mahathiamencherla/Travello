@@ -91,6 +91,8 @@ body{
 
 #listDisplay{
     min-height: 67vh;
+    max-height: 67vh;    
+    overflow-y:auto;
 }
 
 table {
@@ -98,14 +100,13 @@ table {
     font-family: 'Montserrat';
     border-collapse: collapse;
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto;   
 }
 
 table td:first-child:before {
 counter-increment: Serial;  /* Increment the serial number counter */
 content: counter(Serial);  /* Display the counter */
 }
-
 
 td, th {
 border: 1px solid white;
@@ -189,6 +190,8 @@ tr:nth-child(odd) button:hover{
     width: 90%;
     height: 37px; 
     font-family: 'Montserrat';
+    position: sticky;
+    bottom: 0px;
 }
 
 #newIdea{

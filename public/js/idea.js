@@ -7,6 +7,7 @@ const newIdea = document.querySelector("#newIdea")
 const cost = document.querySelector("#cost")
 const time = document.querySelector("#time")
 const table = document.querySelector("#ideaTable")
+const listDisplay = document.querySelector('#listDisplay')
 
 const pathname = window.location.pathname;
 const token = pathname.replace("/idea/","")
@@ -41,6 +42,7 @@ sub_btn.addEventListener("click", (e) => {
           idea = result.data          
           displayRow(idea)          
       })
+      listDisplay.scrollTop = listDisplay.scrollHeight;
 })
 
 idea_btn.addEventListener("click", (e) => {
@@ -65,8 +67,7 @@ logout.addEventListener("click", (e) => {
         } else {
             window.location.href = `/logout/failure`
         }
-    })
-    
+    })    
 })
 
 profile.addEventListener("click", (e) => {    
@@ -120,3 +121,6 @@ function updateVetoCount(id){
         }       
     })    
 }
+
+
+messageBody.scrollTop = 30;
