@@ -44,10 +44,12 @@
                             <td class="idea">Delete All</td>
                             <td class="time"></td>
                             <td class="cost"></td>                            
-                            <td class="veto"></td>                        
+                            <td class="veto"><input type="checkbox" id="deleteAll" onclick="myFunction()"></td>                        
                         </tr>
-                    </table>
-        </div>                             
+                    </table>                
+                </div>  
+                <button id="submit">Submit</button>
+                {{>footer}}                           
             </div>  
             
              <div class="form-popup" id="myForm">
@@ -59,7 +61,7 @@
             
         </form>
         </div>          
-           {{>footer}} 
+            
         </div>
         </div>
              

@@ -95,8 +95,7 @@ body{
   
 }
 
-footer {
-  margin-top: 900px;
+footer {    
   text-align: right;
   color: #2A274D;  
   padding: 16px 32px 0px 0px ;
@@ -224,3 +223,110 @@ a:hover {
   cursor: pointer;
 }
 
+#submit{
+  display:none;
+  width: 300px;
+  height: 30px;
+  margin: 5px auto;
+}
+
+#listDisplay{
+  display: none;
+  min-height: 36vh;
+  max-height: 36vh;    
+  overflow-y:auto;
+  margin-top: 2%;
+}
+
+table {
+  counter-reset: Serial;
+  font-family: 'Montserrat';
+  border-collapse: collapse;
+  width: 90%;
+  margin: 0 auto;   
+}
+
+table td:first-child:before {
+counter-increment: Serial;  /* Increment the serial number counter */
+content: counter(Serial);  /* Display the counter */
+}
+
+td, th {
+border: 1px solid white;
+text-align: left;
+padding: 8px;
+border-radius: 7px;
+}
+
+td:last-child{
+  padding: 0 0;
+}
+
+tr:nth-child(odd){
+background-color: #edebeb;
+}
+
+tr:nth-child(even) {
+background-color: #d76c7f;
+color: white
+}
+
+tr:nth-child(even) button {
+color: white;
+}
+
+th.slno{
+  text-align: center;
+  font-weight: bolder;
+  width: 5%;
+}
+
+th.idea{
+text-align: center;
+font-weight: bolder;
+width: 65%;
+}
+
+th.time{    
+  text-align: center;
+  font-weight: bolder;
+  width: 5%;
+  align-content: center;
+}
+
+th.cost{
+text-align: center;
+font-weight: bolder;
+width: 5%;
+}
+
+th.veto{    
+text-align: center;
+font-weight: bolder;
+width: 5%;
+align-content: center;
+}
+
+table button{    
+  padding: 0 0;
+  width : 100%;
+  height: 36px;
+  text-align: center;
+  font-weight: bolder;      
+  border-radius: 7px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+tr:nth-child(even) button:hover{
+  background-color: #ba4747
+}
+
+tr:nth-child(odd) button:hover{
+  background-color: #d6d0d0
+}
+
+.chkbtn{
+  margin: 0px auto;
+}

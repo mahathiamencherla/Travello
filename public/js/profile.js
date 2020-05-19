@@ -8,6 +8,8 @@ const delete_btn = document.querySelector("#del_button")
 const background = document.querySelector("#background")
 const listDisplay = document.querySelector('#listDisplay')
 const table = document.querySelector("#ideaTable")
+const submit_btn = document.querySelector("#submit")
+const deleteAll = document.querySelector("#deleteAll")
 
 let originalDest = ''
 const pathname = window.location.pathname;
@@ -81,11 +83,15 @@ function editDest(element) {
         delete_btn.addEventListener("click", (e) => {
             e.preventDefault()
             document.getElementById("listDisplay").style.display = "block";
+            submit_btn.style.display = "block";
             document.getElementById("myForm").style.display = "none";
+            editBox.value = originalDest//axios to change destination
+            editBox.readOnly = true
+            editBox.style.backgroundColor = "#d76c7f"
         })
         close.addEventListener("click", (e) => {
             e.preventDefault()
-            document.getElementById("myForm").style.display = "none";
+            document.getElementById("myForm").style.display = "none";            
             editBox.value = originalDest
             editBox.readOnly = true
             editBox.style.backgroundColor = "#d76c7f"
@@ -118,8 +124,77 @@ function edit(element){
             }).then((result) => {
                 console.log('success')
                 location.reload()        
-            })
-        
+            })        
     }    
 }
 
+axios({
+    method: 'get',
+    url: `/idea/data/${token}`    
+}).then((result) => {
+    list = result.data
+    diplayList(list)    
+})
+
+
+const diplayList = function(list){
+    list.forEach((idea) => {
+        displayRow(idea)    
+    })
+}
+
+const displayRow = function(idea){
+        var description = idea.description        
+        var cost = idea.cost
+        var duration = idea.duration
+
+        var row = table.insertRow(-1)
+        var cell1 = row.insertCell(0)
+        var cell2 = row.insertCell(1)
+        var cell3 = row.insertCell(2)
+        var cell4 = row.insertCell(3)        
+        var cell5 = row.insertCell(4)
+
+        var btn = document.createElement('input')
+        btn.setAttribute('type','checkbox')        
+        btn.setAttribute('name','removeIdea')    
+        btn.setAttribute('class','chkbtn')   
+        btn.setAttribute('title','Click to delete')        
+        btn.setAttribute('id',idea._id)                        
+        cell2.innerText = description
+        cell3.innerText = duration
+        cell4.innerText = cost
+        cell5.appendChild(btn)
+}
+
+function myFunction() { 
+    if (deleteAll.checked == true){
+        var x = document.getElementsByName("removeIdea");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if (x[i].type == "checkbox") {
+                x[i].checked = true;
+            }
+        }    
+    }else{
+        var x = document.getElementsByName("removeIdea");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if (x[i].type == "checkbox") {
+                x[i].checked = false;
+            }
+        }    
+    }
+}
+
+submit_btn.addEventListener('click',(e) => {
+    idList = []
+    var x = document.getElementsByName("removeIdea");
+        var i;
+        for (i = 0; i < x.length; i++) {
+            if (x[i].checked == true) {
+                idList.push(x[i].id)   
+            }
+        }    
+        //console.log(idList) axios to delete selected ideas
+})
