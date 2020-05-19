@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
+        <div id="background">
         <div class="Container">
             <div class="sidebar">
                 <div class="info">
@@ -25,13 +26,26 @@
                 <h1>{{title}}</h1>  
                 <div class="form-profile">
                     <br>
-                    <div class="line"><label>Destination</label><input type="text" id="dst" value={{dest}} onkeypress="edit(this)" readonly><button class="btn" id="edit_dst" onclick="allowEdit(this)"><i  class="fa fa-edit"></i></button></div><br>
+                    <div class="line"><label>Destination</label><input type="text" id="dst" value={{dest}} onkeypress="editDest(this)" readonly><button class="btn" id="edit_dst" onclick="allowEdit(this)"><i  class="fa fa-edit"></i></button></div><br>
                     <div class="line"><label>Number of people</label> <input type="text" id="grpno" value={{grpNo}} onkeypress="edit(this)" readonly><button class="btn" id="edit_grpno" onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>
                     <div class="line"><label>Email</label><input type="text" id="email" value={{email}} onkeypress="edit(this)" readonly><button class="btn" id="edit_email"  onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>                          
                 </div>                            
-            </div>            
-        </div>    
-    </body>            
+            </div>  
+            
+             <div class="form-popup" id="myForm">
+        <form  class="form-container">
+            <span class="close">&times;</span>
+            <p>Since you're changing your destination, do you want to delete all your ideas?</p>
+           <button type="submit" id="del_button" class="form-btn">Delete</button>
+            <button type="button" class="keep-form-btn">Keep</button>
+            
+        </form>
+        </div>
+           {{>footer}} 
+        </div>
+        </div>
+             
+    </body>           
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src= "/js/profile.js" > </script>
 
