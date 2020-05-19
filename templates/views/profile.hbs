@@ -29,7 +29,25 @@
                     <div class="line"><label>Destination</label><input type="text" id="dst" value={{dest}} onkeypress="editDest(this)" readonly><button class="btn" id="edit_dst" onclick="allowEdit(this)"><i  class="fa fa-edit"></i></button></div><br>
                     <div class="line"><label>Number of people</label> <input type="text" id="grpno" value={{grpNo}} onkeypress="edit(this)" readonly><button class="btn" id="edit_grpno" onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>
                     <div class="line"><label>Email</label><input type="text" id="email" value={{email}} onkeypress="edit(this)" readonly><button class="btn" id="edit_email"  onclick="allowEdit(this)"><i class="fa fa-edit"></i></button></div><br>                          
-                </div>                            
+                </div> 
+                <div id="listDisplay">
+                    <table id="ideaTable">
+                        <tr>
+                            <th class="slno">Sl.No</th>
+                            <th class="idea">Idea</th>
+                            <th class="time">Duration</th>
+                            <th class="cost">Cost</th>                            
+                            <th class="veto">Delete</th>                        
+                        </tr>
+                        <tr>
+                            <td class="slno"></td>
+                            <td class="idea">Delete All</td>
+                            <td class="time"></td>
+                            <td class="cost"></td>                            
+                            <td class="veto"></td>                        
+                        </tr>
+                    </table>
+        </div>                             
             </div>  
             
              <div class="form-popup" id="myForm">
@@ -40,7 +58,7 @@
             <button type="button" class="keep-form-btn">Keep</button>
             
         </form>
-        </div>
+        </div>          
            {{>footer}} 
         </div>
         </div>

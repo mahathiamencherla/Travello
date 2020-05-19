@@ -6,6 +6,8 @@ const keep = document.querySelector(".keep-form-btn")
 const close = document.querySelector(".close")
 const delete_btn = document.querySelector("#del_button")
 const background = document.querySelector("#background")
+const listDisplay = document.querySelector('#listDisplay')
+const table = document.querySelector("#ideaTable")
 
 let originalDest = ''
 const pathname = window.location.pathname;
@@ -76,9 +78,11 @@ function editDest(element) {
             
         })
 
-        // delete_btn.addEventListener("click", (e) => {
-        //     e.preventDefault()
-        // })
+        delete_btn.addEventListener("click", (e) => {
+            e.preventDefault()
+            document.getElementById("listDisplay").style.display = "block";
+            document.getElementById("myForm").style.display = "none";
+        })
         close.addEventListener("click", (e) => {
             e.preventDefault()
             document.getElementById("myForm").style.display = "none";
@@ -118,3 +122,4 @@ function edit(element){
         
     }    
 }
+
