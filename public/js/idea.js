@@ -109,17 +109,14 @@ function updateVetoCount(id){
     if(!Cookies.get('Travello')){          
         var idList = []
         idList.push(id)
-        Cookies.set('Travello',idList,{ expires: 7 })        
-        console.log("Created new cookie")
+        Cookies.set('Travello',idList,{ expires: 7 })                
     }else{
-        idList = Cookies.getJSON('Travello')
-        console.log("idList  ",idList,typeof idList)
+        idList = Cookies.getJSON('Travello')        
         if (idList.includes(id)){
             window.alert("You have already vetoed this idea")            
         }else{
             idList.push(id)
-            Cookies.set('Travello',idList,{ expires: 7 })
-            console.log("Added cookie")     
+            Cookies.set('Travello',idList,{ expires: 7 })            
             axios({
                 method: 'patch',
                 url: `/veto/${token}`,
