@@ -8,8 +8,7 @@ const modal = document.querySelector("#myModal")
 const share_btn = document.querySelector(".Sbtn")
 const close = document.querySelector(".close")
 const url = document.querySelector("#url")
-const change_button = document.querySelector("#change_button")
-const email_change = document.querySelector("#email_change")
+const change_email = document.querySelector("#change_email")
 
 url.value = window.location.href
 
@@ -26,6 +25,11 @@ veto_btn.addEventListener("click", (e) => {
 })
 
 profile.addEventListener("click", (e) => {    
+    e.preventDefault()    
+    window.location.href = `/profile/${token}`    
+})
+
+change_email.addEventListener("click", (e) => {    
     e.preventDefault()    
     window.location.href = `/profile/${token}`    
 })

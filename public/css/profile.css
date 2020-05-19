@@ -57,7 +57,8 @@ body{
     font-family: 'Montserrat'; 
     background-color: white; 
     border: none;
-    color: black
+    color: black;
+    cursor: pointer;
 }
 
 .navigation button:hover {
@@ -82,14 +83,14 @@ body{
 }
 
 .form-profile { 
-  padding-top: 100px;
-  margin:   10% auto 0px auto;   
+  padding-top: 70px;
+  margin:   5% auto 0px auto;   
   border-radius: 10px;
   background-color: #d76c7f;
   width: 80%;  
   padding: 10px 10px;        
   font-family: 'Montserrat';
-  font-size: 40px;    
+  font-size: 25px;    
   
 }
 
@@ -103,10 +104,13 @@ body{
 .line input{
   min-width: 60%;
   font-family: 'Montserrat';
-  font-size: 40px; 
+  font-size: 25px; 
   margin-right: 5%;
   border-radius: 8px;
-  border: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid black;
   outline: none;
   background-color: #d76c7f;
 }
@@ -120,10 +124,14 @@ body{
   border:none;
   float: right;
   border-radius: 8px;
-  background-color: white;
+  background-color: #ebebeb;
   padding: 3px 4px;
-  font-size: 40px;
+  font-size: 30px;
   cursor: pointer;
-  height: 55px;
-  width: 58px;
+  height: 45px;
+  width: 48px;
+}
+
+.btn:hover {
+  background-color: white;
 }

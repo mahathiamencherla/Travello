@@ -2,7 +2,7 @@
 
 <html>    
     <head>
-        <title>{{title}}</title>
+        <title>Profile</title>
         <link rel="icon" href="/img/travelloicon.png">
         <link rel="stylesheet" href="/css/me.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -39,27 +39,11 @@
                 <button id = "idea">IDEA LIST</button>
                 <button id="veto" >VETO LIST</button>                
             </div>        
-            <p>{{email}}<button id="change_email" onclick="openForm()">Change?</button></p>
-            <div class="form-popup" id="myForm">
-            <form  class="form-container">
-                <p>Change email!</p>
-                <input type="text" id="email_change" placeholder="Enter email" name="email" required>
-                <button type="submit" id="change_button" class="btn">Change</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-            </div>
+            <p>{{email}}<button id="change_email" >Change?</button></p>
+            
             {{>footer}}
         </div>        
         </div>
-        <script>
-        function openForm() {
-        document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-        }
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/me.js" > </script>

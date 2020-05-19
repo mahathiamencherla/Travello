@@ -46,13 +46,30 @@ function allowEdit(element){
 }
 
 function edit(element){
+    var destination= '', peopleCount= '', email=''
     if(event.key === 'Enter'){
         const value = element.value    
         const id = element.id
-        console.log(value,id)
         editBox = document.getElementById(id)
         editBox.readOnly = true
-        editBox.style.backgroundColor = "#d76c7f"        
-        //axios patch
+        editBox.style.backgroundColor = "#d76c7f"  
+        if(id === 'dst') {
+            destination= value
+        }  else if (id === 'grpno') {
+            peopleCount = value
+        }  else {
+            email = value
+        }  
+        axios ({
+            method: 'patch',
+            url: `/profile/${token}`,
+            data: {
+                destination,
+                peopleCount,
+                email
+            }
+        }).then((result) => {
+            console.log('success')
+        })
     }    
 }
