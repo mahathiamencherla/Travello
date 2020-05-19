@@ -3,12 +3,12 @@ const token = pathname.replace("/me/","")
 const logout = document.querySelector("#logout")
 const idea_btn = document.querySelector("#idea")
 const veto_btn = document.querySelector("#veto")
+const profile = document.querySelector("#profile")
 const modal = document.querySelector("#myModal")
-const share_btn = document.querySelector("#share_btn")
+const share_btn = document.querySelector(".Sbtn")
 const close = document.querySelector(".close")
 const url = document.querySelector("#url")
-const change_button = document.querySelector("#change_button")
-const email_change = document.querySelector("#email_change")
+const change_email = document.querySelector("#change_email")
 
 url.value = window.location.href
 
@@ -22,6 +22,16 @@ idea_btn.addEventListener("click", (e) => {
 veto_btn.addEventListener("click", (e) => {    
     e.preventDefault()    
     window.location.href = `/veto/${token}`    
+})
+
+profile.addEventListener("click", (e) => {    
+    e.preventDefault()    
+    window.location.href = `/profile/${token}`    
+})
+
+change_email.addEventListener("click", (e) => {    
+    e.preventDefault()    
+    window.location.href = `/profile/${token}`    
 })
 
 logout.addEventListener("click", (e) => {  
@@ -42,17 +52,17 @@ logout.addEventListener("click", (e) => {
 
 share_btn.addEventListener("click", (e) => {
     e.preventDefault()
-    modal.style.display = "block";
+    myForm1.style.display = "block";
 })
 
 close.addEventListener("click", (e) => {
     e.preventDefault()
-    modal.style.display = "none";
+    myForm1.style.display = "none";
 })
  
 window.onclick = function(event) {   //If user clicks anywhere outside of the modal, close it
-    if (event.target == modal) {
-      modal.style.display = "none";
+    if (event.target == myForm1) {
+        myForm1.style.display = "none";
     }
   }
 

@@ -37,7 +37,7 @@ router.get('/me/:token', auth, async (req, res) => {
     res.render('me', {
         title: 'Welcome to your planner!',
         description: 'Choose what you want to do',
-        dest: "Your destination: " + planner.destination,
+        dest: "Destination: " + planner.destination,
         grpNo: "Number of people: "  + planner.peopleCount,
         email: "Admin email: " +planner.email
     })
@@ -57,16 +57,36 @@ router.post('/logout/:token', auth, async (req, res) => {
     }
 })
 
-router.patch('/me/:token', auth, async (req, res) => {
+router.get('/profile/:token', auth, async (req, res) => {
+    const planner = req.planner
+    res.render('profile', {
+        title: 'Edit your planner profile!',
+        description: 'Choose what you want to do',
+        dest: planner.destination,
+        grpNo: planner.peopleCount,
+        email: planner.email
+    })
+})
+
+router.patch('/profile/:token', auth, async (req, res) => {
+    const updates = Object.keys(req.body)
+    const removeNull = updates.filter((update) => req.body[update] !== "") 
+    const allowedUpdates = ['destination', 'peopleCount','email']
+    const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
+
+    if(!isValidOperation) {
+        return res.status(400).send({error: "Invalid update!"})
+    }
+
     try {
-        const planner = await Planner.findOneAndUpdate({_id: req.planner._id},{ $set: {email: req.body.email}},{ new: true, runValidators: true})
-        if(!planner){
-            res.sendStatus(404)
-        }
+
+        removeNull.forEach((update) => req.planner[update] = req.body[update])
+
         await req.planner.save()
-        res.send(planner)
+
+        res.send(req.planner)
     } catch (error) {
-        res.sendStatus(500)
+        res.status(400).send(error)
     }
 })
 

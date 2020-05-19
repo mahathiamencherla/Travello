@@ -2,59 +2,48 @@
 
 <html>    
     <head>
-        <title>{{title}}</title>
+        <title>Profile</title>
         <link rel="icon" href="/img/travelloicon.png">
         <link rel="stylesheet" href="/css/me.css"> 
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     </head>
     <body>
-        <div class="main-content">
-            <h1>{{title}}</h1>      
-            <div id="share">                
+        <div class="Container">
+        <div id="sidebar">
+            <div class="info">
+                    <p>{{dest}}</p>  
+                    <p>{{grpNo}}</p>         
+                </div>
+                <div class="navigation">                    
+                    <button id="profile">Edit profile</button>
+                    <button id="logout">Logout</button>          
                 <div class="tooltip">
-                    <button id="share_btn" class="Sbtn">Share</button><br><br>
+                    <button class="Sbtn">Share</button><br><br>
                     <span class="tooltiptext">Get shareable link</span>
                 </div>
-            </div>   
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
+            <div  class="form-popup1" id="myForm1">
+                <div class="form-container1">
                     <span class="close">&times;</span>
                     <input id="url">                      
                     <button class="btn" data-clipboard-target="#url">
                         <img src="/img/clippy.svg">
                     </button>
                 </div>
-            </div>             
-            <div class = "buttoncase">
+            </div>   
+            </div>
+        </div>
+        <div class="main-content">
+            <h1>{{title}}</h1>                
+            <div>
                 <div class="description"><p >{{description}}</p></div>
                 <button id = "idea">IDEA LIST</button>
                 <button id="veto" >VETO LIST</button>                
-            </div>
+            </div>        
+            <p>{{email}}<button id="change_email" >Change?</button></p>
+            
+            {{>footer}}
+        </div>        
         </div>
-        <p>{{dest}}</p>
-        <p>{{grpNo}}</p>
-        <p>{{email}} <button id="change_email" onclick="openForm()">Change?</button></p>
-        <div class="form-popup" id="myForm">
-        <form  class="form-container">
-            <p>Change email!</p>
-            <input type="text" id="email_change" placeholder="Enter email" name="email" required>
-               <button type="submit" id="change_button" class="btn">Change</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-        </div>
-        <button id="logout">Logout</button>
-        {{>footer}}
-        <script>
-        function openForm() {
-        document.getElementById("myForm").style.display = "block";
-        }
-
-        function closeForm() {
-        document.getElementById("myForm").style.display = "none";
-        }
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/me.js" > </script>

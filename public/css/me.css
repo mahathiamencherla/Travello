@@ -1,23 +1,82 @@
-body {
-    background-color: white;
-    max-width: 1000px;   
-    margin: 0 auto;       
-    padding: 0 16px; 
-    text-align: center;
-    font-family: 'Montserrat';
-    color: #2A274D;
-    background-size: 200% 100% !important;
+body{
+  margin: 0px; 
+  color: #232141;
+  font-family: 'Montserrat';  
+  font-weight: normal;   
+  background-size: 200% 100% !important;    
+} 
+ 
+ .Container{
+  max-width: 100%;      
+  background-size: 100%;
+  display: flex; 
+  min-height: 100vh; 
+ }
+ 
+ .main-content{
+  background-color: white;
+  text-align: center;
+  font-family: 'Montserrat';
+  color: #2A274D;  
+  flex-grow: 7  ;
 }
 
-#share{
-  position: absolute;
-  left: 90%;
-  top: 5%;
-  font-family: 'Montserrat';
+#sidebar{    
+  background-color: #2A274D;
+  display: flex;
+  flex-direction: column; 
+  flex-grow: 1.75; 
+
+  z-index: 1;
 }
+
+.info{
+  display: flex; 
+  flex-direction: column;   
+  flex-grow: 0.2;    
+  background-color: #2A274D;
+  justify-content: safe;
+  border-bottom: 1px solid white;
+}
+
+.info p{  
+  margin-top: 30px;     
+  text-align: center;
+  color: white;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.navigation{
+  display: flex;
+  flex-direction: column; 
+  flex-grow: 4;    
+}
+
+.navigation button{
+  width: 80%;
+  height: 50px;               
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-top: 50px;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: 'Montserrat'; 
+  background-color: white; 
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.navigation button:hover {
+background-color: #edebeb;
+}
+
 
 .tooltip{
   position: relative;  
+  left:35px;
 }
 
 .tooltip .tooltiptext {
@@ -26,8 +85,8 @@ body {
   background-color: #666363;
   color: whitesmoke;
   text-align: center;  
-  border-radius: 6px; 
-  left: -20%;
+  border-radius: 7px; 
+  left: 20%;
   bottom: -20%;
   position: absolute;
   z-index: 1;
@@ -54,18 +113,6 @@ body {
   font-family: 'Montserrat';
 }
 
-#share_btn{
-  background-color: #4C488C;
-  border: none;
-  border-radius: 7px;
-  height: 40px;
-  width: 100px;
-  text-align: center;
-  color: white;
-  font-size: large;
-  font-family: 'Montserrat';
-}
-
 h1 {
     font-size: 50px;
     margin-bottom: 16px;
@@ -83,16 +130,17 @@ h1 {
 
 #idea, #veto {
     width: 300px;
-    height: 200px;   
+    height: 100px;   
     margin: 50px 42px; 
     padding: 32px 16px;    
-    border-radius: 50px;
+    border-radius: 10px;
     border: none;
-    font-weight: bolder;
-    font-size: xx-large;
+    font-weight: bold;
+    font-size: x-large;
     font-family: 'Montserrat'; 
-    background-color: #4C488C; 
+    background-color: #ebebeb; 
     color:  #d76c7f;
+    cursor: pointer;
 }
 
 #idea:hover {
@@ -103,43 +151,23 @@ h1 {
     background-color: #2A274D;
   }  
 
-#share_btn:hover {
-    background-color: #2A274D;
-  }
-
 footer {
+    margin-top: 450px;
     text-align: right;
     color: #2A274D;
-    border-top: 1px solid #2A274D;
-    margin-top: 100px;
-    padding: 16px 0;
+    border-top: 1px solid #2A274D;    
+    padding: 16px 32px 0px 0px ;
+
 }
 
 footer a {
+
     text-decoration: none;
     background-color: #f6fafb;
     color: #2A274D;
-    border-radius: 5px;
+    border-radius: 5px; 
   }
 
-#logout {
-    width: 20%;
-    height: 50px;               
-    border-radius: 5px;
-    margin: 0 auto;
-    margin-top: 50px;
-    font-weight: normal;
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Montserrat'; 
-    background-color: #ebebeb; 
-    border: none;
-    color: black
-}
-
-#logout:hover {
-    background-color: #d6d0d0;
-  }
 
 a:hover {    
     background-color: #d76c7f;
@@ -148,31 +176,7 @@ a:hover {
 
 button{
   outline: none;
-}
-
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */  
-  background-color: #000000; /* Fallback color */
-  background-color: #00000066; /* Black w/ opacity */
-  
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #ebebeb;   
-  margin-left: 73%;
-  margin-right: 10%;
-  padding: 20px;
-  border: 1px solid #9c9999;
-  width: 23%;
-  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* The Close Button */
@@ -190,16 +194,17 @@ button{
   cursor: pointer;
 }
 
-.btn{  
+.form-container1 .btn{  
   margin: auto 0px;  
   width: 40px;
   height: 42px; 
   padding: auto auto;
   background-color: transparent; 
   border: none;
+  cursor: pointer;
 }
 
-.btn img{
+.form-container1 .btn img{
   padding-top: 5px;
   width: 20px;  
 } 
@@ -227,6 +232,21 @@ button{
 
 #change_email:hover {
   background-color: #d6d0d0;
+}
+
+.form-popup1 {
+  display: none;
+  position: fixed;
+  top: 490px;
+  left: 10px;
+  border: 3px solid #cccccc;
+  z-index: 9;  
+}
+
+.form-container1 {
+  min-width: 320px;  
+  padding: 10px;
+  background-color: white;
 }
 
 .form-popup {
@@ -271,3 +291,4 @@ button{
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
