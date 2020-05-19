@@ -106,21 +106,35 @@ const displayRow = function(idea){
 }
 
 function updateVetoCount(id){
-    axios({
-        method: 'patch',
-        url: `/veto/${token}`,
-        data:{
-            veto:id
+    if(!Cookies.get('Travello')){          
+        var idList = []
+        idList.push(id)
+        Cookies.set('Travello',idList,{ expires: 7 })        
+        console.log("Created new cookie")
+    }else{
+        idList = Cookies.getJSON('Travello')
+        console.log("idList  ",idList,typeof idList)
+        if (idList.includes(id)){
+            window.alert("You have already vetoed this idea")            
+        }else{
+            idList.push(id)
+            Cookies.set('Travello',idList,{ expires: 7 })
+            console.log("Added cookie")     
+            axios({
+                method: 'patch',
+                url: `/veto/${token}`,
+                data:{
+                    veto:id
+                }
+            }).then((result) => {
+                console.log("patched")
+                const vetoCount = result.data.list.vetoCount
+                const vetoLimit = (result.data.grpno%2) == 0?(result.data.grpno/2)+1: Math.ceil(result.data.grpno/2)        
+                if (vetoCount === vetoLimit ){
+                    window.alert("This idea has been vetoed")
+                    location.reload()            
+                }       
+            })
         }
-    }).then((result) => {
-        const vetoCount = result.data.list.vetoCount
-        const vetoLimit = (result.data.grpno%2) == 0?(result.data.grpno/2)+1: Math.ceil(result.data.grpno/2)        
-        if (vetoCount === vetoLimit ){
-            window.alert("This idea has been vetoed")
-            location.reload()            
-        }       
-    })    
+    }   
 }
-
-
-messageBody.scrollTop = 30;
