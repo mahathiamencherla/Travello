@@ -31,6 +31,19 @@ router.post('/join', async (req,res) => {
     }
 })
 
+router.post('/forgotPass', async(req,res) => {
+    try {
+        const planner = await Planner.findOne({ destination: req.body.destination, email: req.body.email })
+
+        if(!planner) {
+            return res.json({error: "Invalid credentials, try again.", success: false })
+        }
+        res.json({success: true})
+    } catch(error) {
+        res.json({error, success:false})
+    }
+})
+
 router.get('/me/:token', auth, async (req, res) => {
     //res.send(req.planner)
     const planner = req.planner

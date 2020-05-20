@@ -43,6 +43,13 @@ app.get('/join', (req,res)=> {
     })
 })
 
+app.get('/forgotPass', (req, res) => {
+    res.render('forgotPass', {
+        title: "Recover your planner!",
+        description: "Enter admin email to proceed.."
+    })
+})
+
 app.get('/logout/success', (req,res)=> {
     res.render('logout', {
         title: 'We\'re sad you\'re leaving..',
@@ -61,4 +68,6 @@ app.get('/logout/failure', (req,res)=> {
 app.use(plannerRouter)
 app.use(listRouter)
 
-app.listen(port)
+app.listen(port, () => {
+    console.log("Server up on port", port)
+})
