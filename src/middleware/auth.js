@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
         // auth flow assumes that the token is given as a url parameter
         // example url: http://localhost:3001/me/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWI1NjY5MjBhNDNkOTZiN2FhYjhkN2IiLCJpYXQiOjE1ODg5NDcwNDF9.I2-g2q_bK6ptT9l1GFFFqFU2NmMBdnI8oSOpsevdfHU
         const token = req.params.token 
-        const decoded = jwt.verify(token, 'thisistravelloplanner')
+        const decoded = jwt.verify(token, process.env.secretKey)
         const planner = await Planner.findOne({ _id: decoded._id, 'tokens.token': token })
 
         if(!planner) {

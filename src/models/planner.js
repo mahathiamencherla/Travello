@@ -65,7 +65,7 @@ plannerSchema.virtual('List', {
 
 plannerSchema.methods.generateAuthToken = async function () {
     const planner = this
-    const token = jwt.sign({_id: planner._id.toString() },'thisistravelloplanner')
+    const token = jwt.sign({_id: planner._id.toString() },process.env.secretKey)
 
     planner.tokens = planner.tokens.concat({ token })
     await planner.save()
