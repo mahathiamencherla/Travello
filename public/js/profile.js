@@ -10,6 +10,10 @@ const listDisplay = document.querySelector('#listDisplay')
 const table = document.querySelector("#ideaTable")
 const submit_btn = document.querySelector("#submit")
 const deleteAll = document.querySelector("#deleteAll")
+const change_btn = document.querySelector("#chng_btn")
+const chng_pwd = document.querySelector("#chng_pwd")
+const close_chng_pwd = document.querySelector(".close_chng_pwd")
+const chng_pwd_sub = document.querySelector("#chng_pwd_sub")
 
 let originalDest = ''
 let ideaLength = 0
@@ -255,6 +259,38 @@ submit_btn.addEventListener('click',(e) => {
             }
         }).then((result) => {            
             location.reload()        
-        })        
-        
+        })      
+})
+
+change_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    myForm1.style.display = "block";
+})
+
+close_chng_pwd.addEventListener("click", (e) => {
+    e.preventDefault()
+    myForm1.style.display = "none";
+})
+ 
+window.onclick = function(event) {   //If user clicks anywhere outside of the modal, close it
+    if (event.target == myForm1) {
+        myForm1.style.display = "none";
+    }
+  }
+
+chng_pwd_sub.addEventListener("click", (e)=> {
+    e.preventDefault()
+    axios ({
+        method: 'post',
+        url: `/changePassword/${token}`,
+        data: {
+            password: chng_pwd.value
+        }
+    }).then(result => {
+        if(result.data.success === false) {
+            window.alert(result.data.error)
+        } else {
+            window.location.href = `/recovery/${token}`
+        }
+    })
 })

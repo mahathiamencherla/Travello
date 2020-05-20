@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const Planner = require('../models/planner')
+const bcrypt = require('bcryptjs')
 
 router.get('/test', (req,res) => {
     res.send('This is from my PLANNER router')
@@ -178,6 +179,15 @@ router.patch('/profile/:token', auth, async (req, res) => {
     } catch (error) {
         res.json({error, success: false})
     }
+})
+
+router.post('/changePassword/:token', auth, async (req, res) => {
+    const planner = req.planner 
+    const isMatch = await bcrypt.compare(req.body.password, planner.password) 
+    if(!isMatch) {
+        return res.json({error:"Password is incorrect!", success: false})
+    }
+    res.json({success: true})
 })
 
 module.exports = router

@@ -347,3 +347,53 @@ tr:nth-child(odd) button:hover{
 .chkbtn{
   margin: 0px 45%;
 }
+
+.form-popup1 {
+  display: none;
+  position: fixed;
+  top: 260px;
+  left: 300px;
+  border: 3px solid #cccccc;
+  z-index: 9;  
+}
+
+.form-container1 {
+  min-width: 320px;  
+  padding: 10px;
+  background-color: white;
+}
+
+.close_chng_pwd {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close_chng_pwd:hover,
+.close_chng_pwd:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-container1 input[type=password] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  font-family: 'Montserrat';
+}
+
+.form-container1 #chng_pwd_sub {
+  background-color: #3E748A;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  font-family: 'Montserrat';
+}
