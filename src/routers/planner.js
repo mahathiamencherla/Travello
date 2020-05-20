@@ -60,13 +60,14 @@ router.post('/join', async (req,res) => {
     }
 })
 
-router.post('/forgotPass', async(req,res) => {
+router.post('/forgotPass', async(req,res) => {    
     try {
         const planner = await Planner.findOne({ destination: req.body.destination, email: req.body.email })
-        const token = await planner.generateAuthToken()
+        const token = await planner.generateAuthToken()                
         if(!planner) {
             return res.json({error: "Invalid credentials, try again.", success: false })
         }
+        await planner.save()        
         let transporter = nodemailer.createTransport({
 			service:'gmail',
 			secure: false,
@@ -85,7 +86,7 @@ router.post('/forgotPass', async(req,res) => {
 			from: '"Travello" <travelloapi@gmail.com',
 			to: req.body.email,
 			subject: 'Password Recovery',
-			html: `You have requested to recover your password.<br> Click here to <a href= "https:localhost3001/recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!`
+			html: `You have requested to recover your password.<br> Click here to <a href= "https://localhost:3001/recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!`
 
 		};
 
@@ -108,8 +109,20 @@ router.get('/recovery/:token', async (req, res) => {
     })
 })
 
-router.get('/me/:token', auth, async (req, res) => {
-    //res.send(req.planner)
+router.patch('/recovery/:token', auth,async (req, res) => {
+    try{
+        // id = req.planner._id        
+        // const planner = await Planner.findOneAndUpdate({ _id:id},{ $set: {password:req.body.pwd}},{ new: true, runValidators: true})                     
+        req.planner.password = req.body.pwd
+        await req.planner.save()
+        res.json({success:true})
+    }catch(error){
+        console.log(error)
+        res.json({error,success:false})
+    }
+})
+
+router.get('/me/:token', auth, async (req, res) => {    
     const planner = req.planner
     res.render('me', {
         title: 'Welcome to your planner!',
