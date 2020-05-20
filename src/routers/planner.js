@@ -63,7 +63,7 @@ router.post('/join', async (req,res) => {
 router.post('/forgotPass', async(req,res) => {
     try {
         const planner = await Planner.findOne({ destination: req.body.destination, email: req.body.email })
-
+        const token = await planner.generateAuthToken()
         if(!planner) {
             return res.json({error: "Invalid credentials, try again.", success: false })
         }
@@ -85,7 +85,7 @@ router.post('/forgotPass', async(req,res) => {
 			from: '"Travello" <travelloapi@gmail.com',
 			to: req.body.email,
 			subject: 'Password Recovery',
-			html: 'You have requested to recover your password.<br> Click here to <a href= "https:localhost3001/recovery">recover</a>.<br> Please ignore if this was not done by you!'
+			html: `You have requested to recover your password.<br> Click here to <a href= "https:localhost3001/recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!`
 
 		};
 
@@ -99,6 +99,13 @@ router.post('/forgotPass', async(req,res) => {
     } catch(error) {
         res.json({error, success:false})
     }
+})
+
+router.get('/recovery/:token', async (req, res) => {
+    res.render('recovery', {
+        title: "Recover your password!",
+        description: "Enter new credentials.."
+    })
 })
 
 router.get('/me/:token', auth, async (req, res) => {

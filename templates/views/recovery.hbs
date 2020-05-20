@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Password Recovery</title>
+        <link rel="icon" href="/img/travelloicon.png">
+        <link rel="stylesheet" href="/css/create.css"> 
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    </head>
+    <body>
+        <h1>{{title}}</h1>
+        <p>{{description}}</p>
+        <div id="cent">
+            <div  id="insideCent">
+            <form>
+                <input placeholder="Enter your new password" type="password" id="pwd"><br>
+                <input placeholder="Reconfirm new password" type="password" id="re_pwd"><br>           
+                <button id="sub_but" >Submit!</button>
+            </form>                       
+        </div>
+        </div>
+        <div id="errormsg">
+                <p id="errorMessage">&nbsp</p>            
+        </div> 
+        {{>footer}} 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+        <script src= "/js/recovery.js" > </script>
+    </body>
+    
+
+</html> 
