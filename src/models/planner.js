@@ -27,7 +27,7 @@ const plannerSchema = new mongoose.Schema({
         lowercase: true,
         validate(value) {
             if (!validator.isEmail(value)) {
-                throw new Error('invalid email')
+                throw new Error('Invalid email')
             }
         }
     },   
@@ -40,7 +40,7 @@ const plannerSchema = new mongoose.Schema({
             const letter = /[a-zA-Z]/; 
             const number = /[0-9]/;
             if(!(number.test(pwd) && letter.test(pwd))){
-                throw new Error ("Password must contain atleast one number and letter")
+                throw new Error ("Password must contain atleast one number, one letter and length 8")
             }
         }
     },

@@ -27,22 +27,28 @@ sub_btn.addEventListener("click", (e) => {
     inputCost = !cost.value ? 0 : cost.value 
     inputTime = !time.value ? 0 : time.value 
 
-    axios({
-        method: 'post',
-        url: `/idea/${token}`,
-        data: {
-          description: inputIdea,
-          cost: inputCost,
-          duration: inputTime
-        }
-      }).then((result) => {
-          newIdea.value = ""
-          cost.value = ""
-          time.value = ""
-          idea = result.data          
-          displayRow(idea)          
-      })
-      listDisplay.scrollTop = listDisplay.scrollHeight;
+    if(inputIdea.length !== 0){
+        axios({
+            method: 'post',
+            url: `/idea/${token}`,
+            data: {
+              description: inputIdea,
+              cost: inputCost,
+              duration: inputTime
+            }
+          }).then((result) => {
+              console.log(result)
+              newIdea.value = ""
+              cost.value = ""
+              time.value = ""
+              idea = result.data          
+              displayRow(idea)          
+          }).catch((e) => {
+              window.alert("Idea already exists! Try another one.")
+          })      
+    }else{
+        window.alert("Please enter an idea")
+    }    
 })
 
 idea_btn.addEventListener("click", (e) => {
@@ -134,4 +140,10 @@ function updateVetoCount(id){
             })
         }
     }   
+}
+
+function confirmIdea(){
+    if(event.key === 'Enter'){
+    sub_btn.click()
+    }
 }

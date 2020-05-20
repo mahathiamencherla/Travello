@@ -57,9 +57,12 @@ function allowEdit(element){
 }
 
 function editDest(element) {
-    var destination = '', peopleCount='', email=''
+    var destination = '', peopleCount='', email=''    
     if(event.key === 'Enter') {// show pop up only if idea list length > 0
-        if(ideaLength > 0)
+        if(element.value.length === 0){
+            window.alert("Destination cannot be empty")
+        }
+        else if(ideaLength > 0)
         {
             document.getElementById("myForm").style.display = "block";
         keep.addEventListener("click", (e) => {
@@ -73,8 +76,12 @@ function editDest(element) {
                     email
                 }
             }).then((result) => {
-                console.log('success')
-                location.reload()        
+                if (result.data.success === true){
+                    location.reload()
+                }else{                    
+                    window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
+                    location.reload()                  
+                }      
             })
             document.getElementById("myForm").style.display = "none";
             editBox = document.getElementById("dst")
@@ -97,8 +104,10 @@ function editDest(element) {
                     email
                 }
             }).then((result) => {
-                console.log('success')
-               // location.reload()        
+                if (result.data.success === false){              
+                    window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
+                    location.reload()                  
+                }         
             })
             editBox.value = element.value
             editBox.readOnly = true
@@ -121,8 +130,12 @@ function editDest(element) {
                     email
                 }
             }).then((result) => {
-                console.log('success')
-                location.reload()        
+                if (result.data.success === true){
+                    location.reload()
+                }else{                    
+                    window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
+                    location.reload()                  
+                }         
             })
             editBox.value = element.value
             editBox.readOnly = true
@@ -134,29 +147,39 @@ function editDest(element) {
 function edit(element){
     var destination= '', peopleCount= '', email=''
     if(event.key === 'Enter'){
-        const value = element.value    
-        const id = element.id
-        editBox = document.getElementById(id)
-        editBox.readOnly = true
-        editBox.style.backgroundColor = "#d76c7f"
-        if (id === 'grpno') {
-            peopleCount = value
-        }  else {
-            email = value
-        } 
-        
-            axios ({
-                method: 'patch',
-                url: `/profile/${token}`,
-                data: {
-                    destination,
-                    peopleCount,
-                    email
-                }
-            }).then((result) => {
-                console.log('success')
-                location.reload()        
-            })        
+        if(element.value.length === 0){
+            if (element.id === 'grpno')
+                window.alert("Number of people cannot be empty")
+            else
+                window.alert("Email cannot be empty")
+        }else{
+            const value = element.value    
+            const id = element.id
+            editBox = document.getElementById(id)
+            editBox.readOnly = true
+            editBox.style.backgroundColor = "#d76c7f"
+            if (id === 'grpno') {
+                peopleCount = value
+            }  else {
+                email = value
+            }             
+                axios ({
+                    method: 'patch',
+                    url: `/profile/${token}`,
+                    data: {
+                        destination,
+                        peopleCount,
+                        email
+                    }
+                }).then((result) => {
+                    if (result.data.success === true){
+                        location.reload()
+                    }else{                    
+                        window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
+                        location.reload()                  
+                    }                
+                })
+        }        
     }    
 }
 

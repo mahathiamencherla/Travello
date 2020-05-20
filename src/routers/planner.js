@@ -84,9 +84,9 @@ router.patch('/profile/:token', auth, async (req, res) => {
 
         await req.planner.save()
 
-        res.send(req.planner)
+        res.json({planner:req.planner, success: true})
     } catch (error) {
-        res.status(400).send(error)
+        res.json({error, success: false})
     }
 })
 
