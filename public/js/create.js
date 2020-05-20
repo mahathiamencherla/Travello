@@ -22,6 +22,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
             }
             }).then((result) => {
                 if(result.data.success === false){
+                    console.log(result.data.error)
                     window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
                 } else {
                     window.location.href = `/me/${result.data.token}`

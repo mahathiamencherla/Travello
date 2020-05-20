@@ -1,4 +1,5 @@
 const express = require('express')
+const nodemailer = require('nodemailer')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const Planner = require('../models/planner')
@@ -13,7 +14,35 @@ router.post('/create', async (req,res) => {
     try {
         const token = await planner.generateAuthToken()
         await planner.save()
-        res.status(201).send({planner, token})
+
+        let transporter = nodemailer.createTransport({
+			service:'gmail',
+			secure: false,
+			port:25,
+			auth: {
+				user: 'travelloapi@gmail.com',
+				pass: 'Hello@123'
+
+			},
+			tls: {
+				rejectUnauthorized: false
+			}
+
+		});
+		let HelperOptions = {
+			from: '"Travello" <travelloapi@gmail.com',
+			to: req.body.email,
+			subject: 'Welcome to Travello!',
+			html: 'Dear Member,<br><br>Good to see you on the Travello app!<br> Hope you have fun planning your trip with your family and friends!<br><br><br> Thank you,<br> Travello Team'
+
+		};
+
+		transporter.sendMail(HelperOptions,(err,info)=> {
+			if(err){
+				res.json({error:{message: "Could not send you your welcome mail! :("}, success: false})
+			}
+			res.json({success: true, token})
+		});
     } catch (error) {
         res.json({error,success:false})
     }
@@ -38,7 +67,35 @@ router.post('/forgotPass', async(req,res) => {
         if(!planner) {
             return res.json({error: "Invalid credentials, try again.", success: false })
         }
-        res.json({success: true})
+        let transporter = nodemailer.createTransport({
+			service:'gmail',
+			secure: false,
+			port:25,
+			auth: {
+				user: 'travelloapi@gmail.com',
+				pass: 'Hello@123'
+
+			},
+			tls: {
+				rejectUnauthorized: false
+			}
+
+		});
+		let HelperOptions = {
+			from: '"Travello" <travelloapi@gmail.com',
+			to: req.body.email,
+			subject: 'Password Recovery',
+			html: 'You have requested to recover your password.<br> Click here to <a href= "https:localhost3001/recovery">recover</a>.<br> Please ignore if this was not done by you!'
+
+		};
+
+		transporter.sendMail(HelperOptions,(err,info)=> {
+			if(err){
+				res.json({server: false})
+			}
+			res.json({success: true})
+		});
+        //res.json({success: true})
     } catch(error) {
         res.json({error, success:false})
     }

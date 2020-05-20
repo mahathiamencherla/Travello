@@ -14,6 +14,8 @@ sub_but.addEventListener("click", (e) => {
     }).then((result) => {
         if(result.data.success === false) {
             window.alert(result.data.error)
+        } else if(result.data.server === false) {
+            window.alert("Mail server down.. try in a while.")
         } else {
             window.alert("Email for password recovery has been sent to the admin!")
         }
