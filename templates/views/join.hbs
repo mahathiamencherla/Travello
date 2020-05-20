@@ -19,6 +19,7 @@
                 <input placeholder="Enter unique password" type="password" id="pwd"><br><br>
                 <input type="checkbox" onclick="myFunction()">Show Password<br><br>               
                 <button id="sub_but">Login!</button>
+                <input type="checkbox" id="login">Stay Logged In<br><br>    
             </form>                  
         </div>
         </div>
@@ -26,9 +27,8 @@
             <p id="errorMessage"></p>            
         </div>
         {{>footer}}
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
         <script src= "/js/join.js" > </script>
-    </body>
-    
-
+    </body> 
 </html>

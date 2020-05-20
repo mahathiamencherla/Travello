@@ -23,13 +23,15 @@
                     
             </div> 
         </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     </body>
     <script type="text/javascript">   
-    function Redirect() 
-    {  
-        window.location="/"; 
-    } 
-    document.write("You will be redirected to the home page in 10 seconds..."); 
-    setTimeout('Redirect()', 10000);   
-</script>
+        function Redirect() 
+        {  
+            Cookies.remove('T_autoLogin');
+            window.location="/"; 
+        } 
+        document.write("You will be redirected to the home page in 10 seconds..."); 
+        setTimeout('Redirect()', 10000);   
+    </script>
 </html> 
