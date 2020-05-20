@@ -69,14 +69,15 @@ body{
   cursor: pointer;
 }
 
+
 .navigation button:hover {
 background-color: #edebeb;
 }
 
 
 .tooltip{
-  position: relative;  
-  left:35px;
+  position: relative;    
+  left:10.2%;
 }
 
 .tooltip .tooltiptext {
