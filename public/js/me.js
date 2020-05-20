@@ -39,15 +39,13 @@ logout.addEventListener("click", (e) => {
     axios({
         method: 'post',
         url: `/logout/${token}`
-    }).then((result) => {
-        console.log(result.data.success)
+    }).then((result) => {        
         if(result.data.success === true) {
             window.location.href = `/logout/success`  
         } else {
             window.location.href = `/logout/failure`
         }
-    })
-    
+    })    
 })
 
 share_btn.addEventListener("click", (e) => {
@@ -65,4 +63,3 @@ window.onclick = function(event) {   //If user clicks anywhere outside of the mo
         myForm1.style.display = "none";
     }
   }
-

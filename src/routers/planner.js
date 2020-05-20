@@ -15,7 +15,7 @@ router.post('/create', async (req,res) => {
         await planner.save()
         res.status(201).send({planner, token})
     } catch (error) {
-        res.status(400).send(error)
+        res.json({error,success:false})
     }
     
 })
@@ -26,8 +26,8 @@ router.post('/join', async (req,res) => {
         const planner = await Planner.findByCredentials(req.body.destination, req.body.password)
         const token = await planner.generateAuthToken()
         res.send({ planner, token })
-    } catch (e) {
-        res.status(400).send(e)       
+    } catch (error) {
+        res.json({error, success: false})     
     }
 })
 

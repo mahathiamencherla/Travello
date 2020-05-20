@@ -33,7 +33,6 @@ router.get('/idea/:token', auth, async(req, res) => {
 
 })
 
-
 router.get('/idea/data/:token', auth, async (req, res) => { //get data
     const major = Math.floor(req.planner.peopleCount/2)
     try{
@@ -86,8 +85,7 @@ router.delete('/profile/idea/:token', auth, (req, res) => {
     const deleteList = req.body.idList
     deleteList.forEach(async (id) => {
         try {
-            const list = await List.findOneAndDelete({_id: id, owner: req.planner._id})
-            //console.log(list)
+            const list = await List.findOneAndDelete({_id: id, owner: req.planner._id})            
         if(!list) {
             res.status(404).send()
         }

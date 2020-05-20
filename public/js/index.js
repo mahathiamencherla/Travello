@@ -1,6 +1,4 @@
-function join(){
-    console.log("join")
-
+function join(){  
     loginToken = Cookies.get('T_autoLogin')
     if(!loginToken){
         window.location.href = "/join"

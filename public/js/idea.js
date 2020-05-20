@@ -20,7 +20,6 @@ axios({
     diplayList(list)    
 })
 
-
 sub_btn.addEventListener("click", (e) => {
     e.preventDefault()
     inputIdea = newIdea.value    
@@ -36,8 +35,7 @@ sub_btn.addEventListener("click", (e) => {
               cost: inputCost,
               duration: inputTime
             }
-          }).then((result) => {
-              console.log(result)
+          }).then((result) => {              
               newIdea.value = ""
               cost.value = ""
               time.value = ""
@@ -66,8 +64,7 @@ logout.addEventListener("click", (e) => {
     axios({
         method: 'post',
         url: `/logout/${token}`
-    }).then((result) => {
-        console.log(result.data.success)
+    }).then((result) => {        
         if(result.data.success === true) {
             window.location.href = `/logout/success`  
         } else {
@@ -129,8 +126,7 @@ function updateVetoCount(id){
                 data:{
                     veto:id
                 }
-            }).then((result) => {
-                console.log("patched")
+            }).then((result) => {                
                 const vetoCount = result.data.list.vetoCount
                 const vetoLimit = (result.data.grpno%2) == 0?(result.data.grpno/2)+1: Math.ceil(result.data.grpno/2)        
                 if (vetoCount === vetoLimit ){

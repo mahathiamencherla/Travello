@@ -6,21 +6,17 @@ require('./db/mongoose')
 const plannerRouter = require('./routers/planner')
 const listRouter = require('./routers/list')
 
-
 const pubdir = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
 
 const app = express()
 
-
 app.set('view engine','hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.use(express.static(pubdir))
-
-
 
 const port = process.env.PORT || 3001
 
@@ -65,6 +61,4 @@ app.get('/logout/failure', (req,res)=> {
 app.use(plannerRouter)
 app.use(listRouter)
 
-app.listen(port, () => {
-    console.log("Server is on port: " + port)
-})
+app.listen(port)

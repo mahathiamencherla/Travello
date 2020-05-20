@@ -27,15 +27,13 @@ logout.addEventListener("click", (e) => {
     axios({
         method: 'post',
         url: `/logout/${token}`
-    }).then((result) => {
-        console.log(result.data.success)
+    }).then((result) => {        
         if(result.data.success === true) {
             window.location.href = `/logout/success`  
         } else {
             window.location.href = `/logout/failure`
         }
-    })
-    
+    })    
 })
 
 profile.addEventListener("click", (e) => {

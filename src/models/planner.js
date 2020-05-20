@@ -16,6 +16,8 @@ const plannerSchema = new mongoose.Schema({
         validate(value) {             
             if (value < 1){
                 throw new Error ('Number of people must be atleast 1')
+            }else if(value%1 !== 0){
+                throw new Error ("Disabled people also count as 1, please don't include fractions")
             }
         },
         default: 1
@@ -40,7 +42,7 @@ const plannerSchema = new mongoose.Schema({
             const letter = /[a-zA-Z]/; 
             const number = /[0-9]/;
             if(!(number.test(pwd) && letter.test(pwd))){
-                throw new Error ("Password must contain atleast one number, one letter and length 8")
+                throw new Error ("Password must contain atleast one number and one letter")
             }
         }
     },
@@ -94,8 +96,7 @@ plannerSchema.pre('save', async function(next) {
     }
 
     next()
-})    
-
+})  
 
 const Planner = mongoose.model('Planner', plannerSchema)
 

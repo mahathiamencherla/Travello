@@ -31,15 +31,13 @@ logout.addEventListener("click", (e) => {
     axios({
         method: 'post',
         url: `/logout/${token}`
-    }).then((result) => {
-        console.log(result.data.success)
+    }).then((result) => {        
         if(result.data.success === true) {
             window.location.href = `/logout/success`  
         } else {
             window.location.href = `/logout/failure`
         }
-    })
-    
+    })    
 })
 
 profile.addEventListener("click", (e) => {    
@@ -53,7 +51,6 @@ function allowEdit(element){
     editBox.readOnly = false
     originalDest = editBox.value
     editBox.style.backgroundColor = "#ffffff"
-
 }
 
 function editDest(element) {
@@ -86,8 +83,7 @@ function editDest(element) {
             document.getElementById("myForm").style.display = "none";
             editBox = document.getElementById("dst")
             editBox.readOnly = true
-            editBox.style.backgroundColor = "#d76c7f"
-            
+            editBox.style.backgroundColor = "#d76c7f"            
         })
 
         delete_btn.addEventListener("click", (e) => {
@@ -192,7 +188,6 @@ axios({
     diplayList(list)    
 })
 
-
 const diplayList = function(list){
     list.forEach((idea) => {
         displayRow(idea)    
@@ -251,16 +246,14 @@ submit_btn.addEventListener('click',(e) => {
             if (x[i].checked == true) {
                 idList.push(x[i].id)   
             }
-        }    
-        console.log(idList) 
+        }            
         axios ({
             method: 'delete',
             url: `/profile/idea/${token}`,
             data: {
                 idList
             }
-        }).then((result) => {
-            console.log('success')
+        }).then((result) => {            
             location.reload()        
         })        
         
