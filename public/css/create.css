@@ -145,3 +145,7 @@ input[type=text], select {
 .label-pwd {
   font-size: 10pt;
 }  
+
+#login{
+  margin-top: 8%;
+}

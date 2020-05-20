@@ -65,3 +65,4 @@ window.onclick = function(event) {   //If user clicks anywhere outside of the mo
         myForm1.style.display = "none";
     }
   }
+
