@@ -65,19 +65,3 @@ window.onclick = function(event) {   //If user clicks anywhere outside of the mo
         myForm1.style.display = "none";
     }
   }
-
-change_button.addEventListener("click", (e) => {
-    e.preventDefault()
-    axios({
-        method: 'patch',
-        url: `/me/${token}`,
-        data: {
-            email: email_change.value
-        }
-    }).then((result) => {
-        window.location.href = `/me/${token}`
-        document.getElementById("myForm").style.display = "none";
-    }).catch((e) => {
-        window.alert('Can\'t update! Try again..')
-    })
-})

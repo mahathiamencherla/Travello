@@ -57,7 +57,7 @@ function allowEdit(element){
 
 function editDest(element) {
     var destination = '', peopleCount='', email=''
-    if(event.key === 'Enter') {
+    if(event.key === 'Enter') {// show pop up only if idea list length > 0
         document.getElementById("myForm").style.display = "block";
         keep.addEventListener("click", (e) => {
             e.preventDefault()
@@ -85,7 +85,19 @@ function editDest(element) {
             document.getElementById("listDisplay").style.display = "block";
             submit_btn.style.display = "block";
             document.getElementById("myForm").style.display = "none";
-            editBox.value = originalDest//axios to change destination
+            axios ({
+                method: 'patch',
+                url: `/profile/${token}`,
+                data: {
+                    destination: element.value,
+                    peopleCount,
+                    email
+                }
+            }).then((result) => {
+                console.log('success')
+               // location.reload()        
+            })
+            editBox.value = element.value
             editBox.readOnly = true
             editBox.style.backgroundColor = "#d76c7f"
         })
@@ -196,5 +208,16 @@ submit_btn.addEventListener('click',(e) => {
                 idList.push(x[i].id)   
             }
         }    
-        //console.log(idList) axios to delete selected ideas
+        console.log(idList) 
+        axios ({
+            method: 'delete',
+            url: `/profile/idea/${token}`,
+            data: {
+                idList
+            }
+        }).then((result) => {
+            console.log('success')
+            location.reload()        
+        })        
+        
 })

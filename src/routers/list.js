@@ -82,4 +82,20 @@ router.patch('/veto/:token',auth, async(req,res) => {
     }
 })
 
+router.delete('/profile/idea/:token', auth, (req, res) => {
+    const deleteList = req.body.idList
+    deleteList.forEach(async (id) => {
+        try {
+            const list = await List.findOneAndDelete({_id: id, owner: req.planner._id})
+            //console.log(list)
+        if(!list) {
+            res.status(404).send()
+        }
+        res.send(list)
+        } catch (error) {
+            res.status(500).send(error)
+        }
+    });
+})
+
 module.exports = router
