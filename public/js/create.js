@@ -20,8 +20,8 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
                 email: email.value,
                 password: pwd.value
             }
-            }).then((result) => {                
-                if(!result.data.error){
+            }).then((result) => {                 
+                if(!result.data.error.code){
                     if(result.data.success === false){                    
                         window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
                     } else {
