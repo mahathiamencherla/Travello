@@ -23,7 +23,6 @@ router.post('/create', async (req,res) => {
 			auth: {
 				user: 'travelloapi@gmail.com',
 				pass: process.env.password
-
 			},
 			tls: {
 				rejectUnauthorized: false
@@ -76,28 +75,23 @@ router.post('/forgotPass', async(req,res) => {
 			auth: {
 				user: 'travelloapi@gmail.com',
 				pass: process.env.password
-
 			},
 			tls: {
 				rejectUnauthorized: false
 			}
-
 		});
 		let HelperOptions = {
 			from: '"Travello" <travelloapi@gmail.com',
 			to: req.body.email,
 			subject: 'Password Recovery',
-			html: `Dear Member,<br><br>You have requested to recover your password.<br> Click here to <a href= "https://travelloapi.herokuapp.com//recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!<br><br><br>Thank you,<br> Travello Team'`
-
+			html: `Dear Member,<br><br>You have requested to recover your password.<br> Click here to <a href= "https://travelloapi.herokuapp.com/recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!<br><br><br>Thank you,<br> Travello Team'`
 		};
-
 		transporter.sendMail(HelperOptions,(err,info)=> {
 			if(err){
 				res.json({server: false})
 			}
 			res.json({success: true})
-		});
-        //res.json({success: true})
+		});        
     } catch(error) {
         res.json({error, success:false})
     }
@@ -111,9 +105,7 @@ router.get('/recovery/:token', async (req, res) => {
 })
 
 router.patch('/recovery/:token', auth,async (req, res) => {
-    try{
-        // id = req.planner._id        
-        // const planner = await Planner.findOneAndUpdate({ _id:id},{ $set: {password:req.body.pwd}},{ new: true, runValidators: true})                     
+    try{     
         req.planner.password = req.body.pwd
         await req.planner.save()
         res.json({success:true})
@@ -138,11 +130,9 @@ router.post('/logout/:token', auth, async (req, res) => {
     try {
         req.planner.tokens = req.planner.tokens.filter((token) => {
             return token.token !== req.params.token
-        })
-        
+        })        
         await req.planner.save()
-        res.json({success: true})
-        
+        res.json({success: true})        
     } catch (error) {
         res.json({success: false})
     }
@@ -170,7 +160,6 @@ router.patch('/profile/:token', auth, async (req, res) => {
     }
 
     try {
-
         removeNull.forEach((update) => req.planner[update] = req.body[update])
 
         await req.planner.save()
