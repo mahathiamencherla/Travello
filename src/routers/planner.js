@@ -87,7 +87,7 @@ router.post('/forgotPass', async(req,res) => {
 			from: '"Travello" <travelloapi@gmail.com',
 			to: req.body.email,
 			subject: 'Password Recovery',
-			html: `You have requested to recover your password.<br> Click here to <a href= "https://localhost:3001/recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!`
+			html: `Dear Member,<br><br>You have requested to recover your password.<br> Click here to <a href= "https://travelloapi.herokuapp.com//recovery/${token}">recover</a>.<br> Please ignore if this was not done by you!<br><br><br>Thank you,<br> Travello Team'`
 
 		};
 
