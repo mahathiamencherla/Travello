@@ -73,8 +73,8 @@ plannerSchema.methods.generateAuthToken = async function () {
     return token
 }
 
-plannerSchema.statics.findByCredentials = async (destination, password) => {
-    const planner = await Planner.findOne({destination })
+plannerSchema.statics.findByCredentials = async (email, password) => {
+    const planner = await Planner.findOne({email })
     if(!planner) {
         throw new Error('Unable to login!')
     }

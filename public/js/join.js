@@ -1,4 +1,4 @@
-const destination = document.querySelector("#dest")
+const email = document.querySelector("#email")
 const pwd = document.querySelector("#pwd")
 const msg  = document.querySelector("#errorMessage")
 const loginCheckBox =document.querySelector('#login')
@@ -18,7 +18,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
       method: 'post',
       url: '/join',
       data: {
-        destination: destination.value,
+        email: email.value,
         password: pwd.value
       }
     }).then((result) => {        

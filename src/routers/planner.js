@@ -52,7 +52,7 @@ router.post('/create', async (req,res) => {
 router.post('/join', async (req,res) => {
 
     try {
-        const planner = await Planner.findByCredentials(req.body.destination, req.body.password)
+        const planner = await Planner.findByCredentials(req.body.email, req.body.password)
         const token = await planner.generateAuthToken()
         res.send({ planner, token })
     } catch (error) {

@@ -53,7 +53,7 @@ app.get('/forgotPass', (req, res) => {
 
 app.get('/logout/success', (req,res)=> {
     res.render('logout', {
-        title: 'We\'re sad you\'re leaving..',
+        title: 'We\'re sad you\'re leaving...',
         description: 'Come back soon!'
     })
 })
