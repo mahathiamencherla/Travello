@@ -1,15 +1,8 @@
 const mongoose = require('mongoose')
-
-mongoose.connect(process.env.mongoURI, {
+const url = process.env.mongoURI  //'mongodb://127.0.0.1:27017/travello-api'
+mongoose.connect(url, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
     useUnifiedTopology: true
 })
-
-// mongoose.connect('mongodb://127.0.0.1:27017/travello-api', {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true
-// })

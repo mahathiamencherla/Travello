@@ -9,6 +9,7 @@ const background = document.querySelector("#background")
 const listDisplay = document.querySelector('#listDisplay')
 const table = document.querySelector("#ideaTable")
 const submit_btn = document.querySelector("#submit")
+const cancel_btn = document.querySelector("#cancel")
 const deleteAll = document.querySelector("#deleteAll")
 const change_btn = document.querySelector("#chng_btn")
 const chng_pwd = document.querySelector("#chng_pwd")
@@ -93,6 +94,7 @@ function editDest(element) {
         delete_btn.addEventListener("click", (e) => {
             e.preventDefault()
             document.getElementById("listDisplay").style.display = "block";
+            cancel_btn.style.display = "block";
             submit_btn.style.display = "block";
             document.getElementById("myForm").style.display = "none";
             axios ({
@@ -293,4 +295,11 @@ chng_pwd_sub.addEventListener("click", (e)=> {
             window.location.href = `/recovery/${token}`
         }
     })
+})
+
+cancel_btn.addEventListener("click", (e) => {
+    e.preventDefault()
+    document.getElementById("listDisplay").style.display = "none";
+    cancel_btn.style.display = "none";
+    submit_btn.style.display = "none";
 })

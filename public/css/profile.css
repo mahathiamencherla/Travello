@@ -245,6 +245,27 @@ a:hover {
   background-color: #2A274D;
 }
 
+#cancel{
+  display:none;
+  width: 250px;
+  height: 50px;
+  border: none;
+  font-size: 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin: 5px auto;
+  background-color: #4C488C;
+  color: white;
+}
+
+#cancel:hover {
+  background-color: #2A274D;
+}
+
+#buttoncontainer{
+  display: flex;
+}
+
 #listDisplay{
   display: none;
   min-height: 36vh;

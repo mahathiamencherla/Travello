@@ -26,8 +26,7 @@
                     <div class="form-container1">                        
                         <label>Enter your old password:</label><span class="close_chng_pwd">&times;</span><br>
                         <input id="chng_pwd" type="password">                                          
-                        <button id="chng_pwd_sub">Submit</button>   
-                       
+                        <button id="chng_pwd_sub">Submit</button>                         
                     </div>
                 </div>  
             </div>
@@ -57,7 +56,7 @@
                         </tr>
                     </table>                
                 </div>  
-                <button id="submit">Submit!</button>
+                <div id="buttoncontainer"><button id="cancel">Cancel</button><button id="submit">Submit!</button></div>
                 {{>footer}}                           
             </div>  
             
@@ -66,16 +65,12 @@
             <span class="close">&times;</span>
             <p>Since you're changing your destination, do you want to delete all your ideas?</p>
            <button type="submit" id="del_button" class="form-btn">Delete</button>
-            <button type="button" class="keep-form-btn">Keep</button>
-            
+            <button type="button" class="keep-form-btn">Keep</button>            
         </form>
-        </div>          
-            
+        </div>                      
         </div>
-        </div>
-             
+        </div>             
     </body>           
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src= "/js/profile.js" > </script>
-
 </html>

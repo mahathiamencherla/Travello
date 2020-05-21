@@ -22,7 +22,7 @@ router.post('/create', async (req,res) => {
 			port:25,
 			auth: {
 				user: 'travelloapi@gmail.com',
-				pass: 'Hello@123'
+				pass: process.env.password
 
 			},
 			tls: {
@@ -75,7 +75,7 @@ router.post('/forgotPass', async(req,res) => {
 			port:25,
 			auth: {
 				user: 'travelloapi@gmail.com',
-				pass: 'Hello@123'
+				pass: process.env.password
 
 			},
 			tls: {
