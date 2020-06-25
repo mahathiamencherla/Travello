@@ -38,7 +38,7 @@ https://github.com/mahathiamencherla15/Travello.git
 ```bash
 $ npm install
 ```
-5. run the code
+4. run the code
 ```bash
 $ npm run dev
 ```
