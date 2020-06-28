@@ -34,11 +34,11 @@ https://github.com/mahathiamencherla15/Travello.git
 
 2. Navigate to the Travello folder in your system
 
-3. run this command to download all dependencies
+3. Run this command to download all dependencies
 ```bash
 $ npm install
 ```
-4. run the code
+4. Run the code
 ```bash
 $ npm run dev
 ```
