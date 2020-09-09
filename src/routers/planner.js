@@ -39,7 +39,7 @@ router.post('/create', async (req,res) => {
 
 		transporter.sendMail(HelperOptions,(err,info)=> {
 			if(err){
-				return res.json({error:"noEmail", success: true})
+				return res.json({error:"noEmail", success: true, token})
 			}
 			return res.json({success: true, token})
 		});
