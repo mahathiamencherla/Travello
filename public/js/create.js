@@ -20,12 +20,13 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
                 email: email.value,
                 password: pwd.value
             }
-            }).then((result) => {                
+            }).then((result) => {             
                 if(result.data.success === false){                    
                     if(!result.data.error.code)
                         window.alert(result.data.error.message.replace(/.*:/,"").replace(/.*:/,""))  
-                    else
-                        window.alert("An account with this email already exists!")      
+                    else {
+                        window.alert("An account with this email already exists!")   
+                    }   
                 } else {
                     window.location.href = `/me/${result.data.token}`
                 }                                                                                              

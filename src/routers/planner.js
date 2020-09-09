@@ -22,7 +22,7 @@ router.post('/create', async (req,res) => {
 			port:25,
 			auth: {
 				user: 'travelloapi@gmail.com',
-				pass: process.env.password
+				pass: "Hello@123"
 			},
 			tls: {
 				rejectUnauthorized: false
@@ -39,9 +39,9 @@ router.post('/create', async (req,res) => {
 
 		transporter.sendMail(HelperOptions,(err,info)=> {
 			if(err){
-				res.json({error:{message: "Could not send you your welcome mail! :("}, success: false})
+				return res.json({error:{message: "(:( Could not send you your welcome mail! "}, success: false})
 			}
-			res.json({success: true, token})
+			return res.json({success: true, token})
 		});
     } catch (error) {
         res.json({error,success:false})
