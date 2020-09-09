@@ -28,7 +28,7 @@ document.getElementById("sub_but").addEventListener("click", (e) => {
                         window.alert("An account with this email already exists!")   
                     }   
                 } else {
-                    if (!!result.data.error === "noEmail"){
+                    if (result.data.error === "noEmail"){
                         window.alert("Could not send you your welcome mail!")
                     }                    
                     window.location.href = `/me/${result.data.token}`
